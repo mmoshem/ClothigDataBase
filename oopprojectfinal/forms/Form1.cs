@@ -69,16 +69,15 @@ namespace oopprojectfinal
             }
             if (comboBoxItem.SelectedItem.ToString() == "Pants")
             {
-                dataGrid.DataSource = PantsTable;
+                
 
                 // Create a new instance of the userControlPants
-                UserControlPants userControlPants = new UserControlPants();
+                userPants = new UserControlPants();
 
                 // Add the userControlPants to the panel
-                panelForm.Controls.Add(userControlPants);
+                panelForm.Controls.Add(userPants);
 
-                userPants = userControlPants;
-
+                dataGrid.DataSource = PantsTable;
             }
         }
 
@@ -91,13 +90,7 @@ namespace oopprojectfinal
                 PantsTable.Add(tmp);
             }    
             
-            //string item = comboBoxItem.SelectedItem.ToString();
-            //string gender = RadioButton
-            //if (item == "pants")
-            //{
-                               
-            //}
-            ////ClothingTable.Add()
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -105,9 +98,17 @@ namespace oopprojectfinal
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void update_button_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGrid_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (dataGrid.DataSource == userPants)
+            {
+                
+            }
         }
         //////////////////////
 

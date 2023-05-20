@@ -32,10 +32,8 @@
             this.comboBoxItem = new System.Windows.Forms.ComboBox();
             this.panelForm = new System.Windows.Forms.Panel();
             this.buttonAdd = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGrid = new System.Windows.Forms.DataGridView();
             this.update_button = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.dataGrid = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,7 +69,7 @@
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(264, 40);
+            this.buttonAdd.Location = new System.Drawing.Point(258, 29);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(75, 44);
             this.buttonAdd.TabIndex = 14;
@@ -79,40 +77,33 @@
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
-            // panel1
+            // update_button
             // 
-            this.panel1.Controls.Add(this.dataGrid);
-            this.panel1.Location = new System.Drawing.Point(318, 100);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(821, 378);
-            this.panel1.TabIndex = 15;
+            this.update_button.Location = new System.Drawing.Point(371, 29);
+            this.update_button.Name = "update_button";
+            this.update_button.Size = new System.Drawing.Size(129, 44);
+            this.update_button.TabIndex = 16;
+            this.update_button.Text = "update";
+            this.update_button.UseVisualStyleBackColor = true;
+            this.update_button.Click += new System.EventHandler(this.update_button_Click);
             // 
             // dataGrid
             // 
             this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGrid.Location = new System.Drawing.Point(0, 0);
+            this.dataGrid.Location = new System.Drawing.Point(347, 103);
             this.dataGrid.Name = "dataGrid";
             this.dataGrid.RowHeadersWidth = 82;
             this.dataGrid.Size = new System.Drawing.Size(815, 375);
             this.dataGrid.TabIndex = 0;
-            // 
-            // update_button
-            // 
-            this.update_button.Location = new System.Drawing.Point(396, 40);
-            this.update_button.Name = "update_button";
-            this.update_button.Size = new System.Drawing.Size(75, 44);
-            this.update_button.TabIndex = 16;
-            this.update_button.Text = "button1";
-            this.update_button.UseVisualStyleBackColor = true;
-            this.update_button.Click += new System.EventHandler(this.button1_Click);
+            this.dataGrid.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGrid_RowHeaderMouseClick);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(732, 439);
+            this.Controls.Add(this.dataGrid);
             this.Controls.Add(this.update_button);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.panelForm);
             this.Controls.Add(this.comboBoxItem);
@@ -120,7 +111,6 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -133,9 +123,8 @@
         private System.Windows.Forms.ComboBox comboBoxItem;
         private System.Windows.Forms.Panel panelForm;
         private System.Windows.Forms.Button buttonAdd;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGrid;
         private System.Windows.Forms.Button update_button;
+        private System.Windows.Forms.DataGridView dataGrid;
     }
 }
 
