@@ -53,7 +53,7 @@ namespace oopprojectfinal.userControls
             if (radioButtonWoman.Checked)
             {
                 comboBoxPantsType.SelectedItem = null;
-                comboBoxPantsType.Items.Clear();
+                //comboBoxPantsType.Items.Clear();
                 comboBoxPantsType.Items.AddRange(new object[] {
                 "Jeans",
                 "Chinos",
@@ -103,7 +103,20 @@ namespace oopprojectfinal.userControls
             string size = comboBoxPantsSize.SelectedItem.ToString();
             string color = textBoxColor.Text;
             string brand = textBoxBrand.Text;
-            double price = Double.Parse(textBoxPrice.Text);
+            //double price = Double.Parse(textBoxPrice.Text);
+            double price=0;
+            int i=0;
+            while (i == 0)
+            {
+                if(double.TryParse(textBoxPrice.Text,out price)) { i = 1; }            
+                else
+                {
+                    string errorMessage = "Input should be a number.";
+                    MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+
             Pants temp = new Pants("Pants",gender,color,brand,price,"none",size,"fat");
             return temp;
 
