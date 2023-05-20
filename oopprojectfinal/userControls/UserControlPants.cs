@@ -53,7 +53,7 @@ namespace oopprojectfinal.userControls
             if (radioButtonWoman.Checked)
             {
                 comboBoxPantsType.SelectedItem = null;
-                //comboBoxPantsType.Items.Clear();
+                comboBoxPantsType.Items.Clear();////////////////////////////////////////////////not influencing ?
                 comboBoxPantsType.Items.AddRange(new object[] {
                 "Jeans",
                 "Chinos",
@@ -68,14 +68,16 @@ namespace oopprojectfinal.userControls
                 "Paperbag pants",
                 "Flare pants",
                 "Cropped pants"});
-            };
+            }
         }
         private void radioButtonUnisex_CheckedChanged(object sender, EventArgs e)
         {
-            comboBoxPantsType.SelectedItem = null;
-            comboBoxPantsType.Items.Clear();
-            comboBoxPantsType.Items.AddRange(new object[] {
-               "Sweatpants",
+            if (radioButtonUnisex.Checked)
+            {
+                comboBoxPantsType.SelectedItem = null;
+                comboBoxPantsType.Items.Clear();
+                comboBoxPantsType.Items.AddRange(new object[] {
+                "Sweatpants",
                 "Jeggings",
                 "Yoga pants",
                 "Track pants",
@@ -85,6 +87,7 @@ namespace oopprojectfinal.userControls
                 "Boardshorts",
                 "Snow pants",
                 "Windbreaker pants"});
+            }
         }
 
         public Pants backToTheAdd()
