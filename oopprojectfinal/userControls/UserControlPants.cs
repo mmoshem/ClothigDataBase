@@ -55,8 +55,36 @@ namespace oopprojectfinal.userControls
                 comboBoxPantsType.SelectedItem = null;
                 comboBoxPantsType.Items.Clear();
                 comboBoxPantsType.Items.AddRange(new object[] {
-                "woman be gae"});
+                "Jeans",
+                "Chinos",
+                "Leggings",
+                "Capri pants",
+                "Palazzo pants",
+                "Culottes",
+                "Trousers",
+                "High-waisted pants",
+                "Bootcut pants",
+                "Wide-leg pants",
+                "Paperbag pants",
+                "Flare pants",
+                "Cropped pants"});
             };
+        }
+        private void radioButtonUnisex_CheckedChanged(object sender, EventArgs e)
+        {
+            comboBoxPantsType.SelectedItem = null;
+            comboBoxPantsType.Items.Clear();
+            comboBoxPantsType.Items.AddRange(new object[] {
+               "Sweatpants",
+                "Jeggings",
+                "Yoga pants",
+                "Track pants",
+                "Cargo shorts",
+                "Overall pants",
+                "Bike shorts",
+                "Boardshorts",
+                "Snow pants",
+                "Windbreaker pants"});
         }
 
         public Pants backToTheAdd()
@@ -80,5 +108,6 @@ namespace oopprojectfinal.userControls
             return temp;
 
         }
+
     }
 }
