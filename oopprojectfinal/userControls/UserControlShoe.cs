@@ -28,7 +28,7 @@ namespace oopprojectfinal
             {
                 comboBoxShoeType.SelectedItem = null;
                 comboBoxShoeType.Items.Clear();
-                comboBoxShoeSize.Items.AddRange(new object[]{ "Oxfords", "Derby shoes", "Loafers", "Brogues", "Monk strap shoes", "Dress boots", "Boat shoes", "Chelsea boots", "Chukka boots", "Wingtip shoes", "Moccasins", "Flip-flops", "Athletic shoes", "Hiking boots" });
+                comboBoxShoeType.Items.AddRange(new object[]{ "Oxfords", "Derby shoes", "Loafers", "Brogues", "Monk strap shoes", "Dress boots", "Boat shoes", "Chelsea boots", "Chukka boots", "Wingtip shoes", "Moccasins", "Flip-flops", "Athletic shoes", "Hiking boots" });
             }
         }
 
@@ -38,7 +38,7 @@ namespace oopprojectfinal
             {
                 comboBoxShoeType.SelectedItem = null;
                 comboBoxShoeType.Items.Clear();
-                comboBoxShoeSize.Items.AddRange(new object[] {
+                comboBoxShoeType.Items.AddRange(new object[] {
                    "Pumps",
                    "Ballet flats",
                    "Ankle boots",
@@ -58,7 +58,7 @@ namespace oopprojectfinal
             {
                 comboBoxShoeType.SelectedItem = null;
                 comboBoxShoeType.Items.Clear();
-                comboBoxShoeSize.Items.AddRange(new object[] {"Sneakers","Sandals"});
+                comboBoxShoeType.Items.AddRange(new object[] {"Sneakers","Sandals"});
             }
         }
     }
