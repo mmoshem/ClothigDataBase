@@ -168,20 +168,6 @@
             // comboBoxPantsType
             // 
             this.comboBoxPantsType.FormattingEnabled = true;
-            this.comboBoxPantsType.Items.AddRange(new object[] {
-            "Jeans ",
-            "Chinos ",
-            "Cargo pants",
-            "Sweatpants",
-            "Trousers",
-            "Harem pants",
-            "Track pants",
-            "Dress pants",
-            "Khaki pants",
-            "Corduroy pants",
-            "Pleated pants",
-            "Jogger pants",
-            "Skinny pants"});
             this.comboBoxPantsType.Location = new System.Drawing.Point(130, 90);
             this.comboBoxPantsType.Name = "comboBoxPantsType";
             this.comboBoxPantsType.Size = new System.Drawing.Size(121, 21);
