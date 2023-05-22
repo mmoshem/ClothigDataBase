@@ -28,7 +28,7 @@ namespace oopprojectfinal
             {
                 comboBoxShoeType.SelectedItem = null;
                 comboBoxShoeType.Items.Clear();
-                comboBoxShoeType.Items.AddRange(new object[]{ "Oxfords", "Derby shoes", "Loafers", "Brogues", "Monk strap shoes", "Dress boots", "Boat shoes", "Chelsea boots", "Chukka boots", "Wingtip shoes", "Moccasins", "Flip-flops", "Athletic shoes", "Hiking boots" });
+                comboBoxShoeType.Items.AddRange(new object[]{ "Oxfords", "Derby shoes", "Loafers", "Brogues", "Monk strap shoes", "Dress boots", "Boat shoes", "Chelsea boots", "Chukka boots", "Wingtip shoes", "Moccasins" });
             }
         }
 
@@ -58,7 +58,7 @@ namespace oopprojectfinal
             {
                 comboBoxShoeType.SelectedItem = null;
                 comboBoxShoeType.Items.Clear();
-                comboBoxShoeType.Items.AddRange(new object[] {"Sneakers","Sandals"});
+                comboBoxShoeType.Items.AddRange(new object[] {"Sneakers", "Athletic shoes", "Hiking boots", "Sandals" ,"Flip-flops" });
             }
         }
 
@@ -118,7 +118,18 @@ namespace oopprojectfinal
             return new Shoe("Shoe", gender, color, brand, price,size, type);
         }
 
+        public void clear()
+        {
+            comboBoxShoeType.SelectedItem = null;
+            comboBoxShoeSize.SelectedItem = null;
+            textBoxBrand.Text = "";
+            textBoxColor.Text = "";
+            textBoxPrice.Text = "";
+            radioButtonMan.Checked = false;
+            radioButtonWoman.Checked = false;
+            radioButtonUnisex.Checked = false;
 
+        }
     }
     
 }

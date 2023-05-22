@@ -49,10 +49,9 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(104, 303);
-            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label5.Location = new System.Drawing.Point(52, 158);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 37);
+            this.label5.Size = new System.Drawing.Size(37, 20);
             this.label5.TabIndex = 43;
             this.label5.Text = "size";
             // 
@@ -66,76 +65,68 @@
             "L",
             "XL",
             "XXL"});
-            this.comboBoxShirtSize.Location = new System.Drawing.Point(258, 307);
-            this.comboBoxShirtSize.Margin = new System.Windows.Forms.Padding(6);
+            this.comboBoxShirtSize.Location = new System.Drawing.Point(129, 160);
             this.comboBoxShirtSize.Name = "comboBoxShirtSize";
-            this.comboBoxShirtSize.Size = new System.Drawing.Size(238, 33);
+            this.comboBoxShirtSize.Size = new System.Drawing.Size(121, 21);
             this.comboBoxShirtSize.TabIndex = 42;
             // 
             // textBoxColor
             // 
-            this.textBoxColor.Location = new System.Drawing.Point(258, 389);
-            this.textBoxColor.Margin = new System.Windows.Forms.Padding(6);
+            this.textBoxColor.Location = new System.Drawing.Point(129, 202);
             this.textBoxColor.Name = "textBoxColor";
-            this.textBoxColor.Size = new System.Drawing.Size(196, 31);
+            this.textBoxColor.Size = new System.Drawing.Size(100, 20);
             this.textBoxColor.TabIndex = 32;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(104, 386);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Location = new System.Drawing.Point(52, 201);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 37);
+            this.label1.Size = new System.Drawing.Size(46, 20);
             this.label1.TabIndex = 33;
             this.label1.Text = "Color";
             // 
             // textBoxPrice
             // 
-            this.textBoxPrice.Location = new System.Drawing.Point(258, 539);
-            this.textBoxPrice.Margin = new System.Windows.Forms.Padding(6);
+            this.textBoxPrice.Location = new System.Drawing.Point(129, 280);
             this.textBoxPrice.Name = "textBoxPrice";
-            this.textBoxPrice.Size = new System.Drawing.Size(196, 31);
+            this.textBoxPrice.Size = new System.Drawing.Size(100, 20);
             this.textBoxPrice.TabIndex = 38;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(104, 468);
-            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label2.Location = new System.Drawing.Point(52, 243);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 37);
+            this.label2.Size = new System.Drawing.Size(52, 20);
             this.label2.TabIndex = 34;
             this.label2.Text = "Brand";
             // 
             // textBoxBrand
             // 
-            this.textBoxBrand.Location = new System.Drawing.Point(258, 468);
-            this.textBoxBrand.Margin = new System.Windows.Forms.Padding(6);
+            this.textBoxBrand.Location = new System.Drawing.Point(129, 243);
             this.textBoxBrand.Name = "textBoxBrand";
-            this.textBoxBrand.Size = new System.Drawing.Size(196, 31);
+            this.textBoxBrand.Size = new System.Drawing.Size(100, 20);
             this.textBoxBrand.TabIndex = 37;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(104, 536);
-            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label4.Location = new System.Drawing.Point(52, 279);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 37);
+            this.label4.Size = new System.Drawing.Size(44, 20);
             this.label4.TabIndex = 36;
             this.label4.Text = "Price";
             // 
             // radioButtonUnisex
             // 
             this.radioButtonUnisex.AutoSize = true;
-            this.radioButtonUnisex.Location = new System.Drawing.Point(394, 82);
-            this.radioButtonUnisex.Margin = new System.Windows.Forms.Padding(6);
+            this.radioButtonUnisex.Location = new System.Drawing.Point(197, 43);
             this.radioButtonUnisex.Name = "radioButtonUnisex";
-            this.radioButtonUnisex.Size = new System.Drawing.Size(109, 29);
+            this.radioButtonUnisex.Size = new System.Drawing.Size(57, 17);
             this.radioButtonUnisex.TabIndex = 62;
             this.radioButtonUnisex.TabStop = true;
             this.radioButtonUnisex.Text = "Unisex";
@@ -145,10 +136,9 @@
             // radioButtonWoman
             // 
             this.radioButtonWoman.AutoSize = true;
-            this.radioButtonWoman.Location = new System.Drawing.Point(244, 82);
-            this.radioButtonWoman.Margin = new System.Windows.Forms.Padding(6);
+            this.radioButtonWoman.Location = new System.Drawing.Point(122, 43);
             this.radioButtonWoman.Name = "radioButtonWoman";
-            this.radioButtonWoman.Size = new System.Drawing.Size(116, 29);
+            this.radioButtonWoman.Size = new System.Drawing.Size(62, 17);
             this.radioButtonWoman.TabIndex = 61;
             this.radioButtonWoman.TabStop = true;
             this.radioButtonWoman.Text = "Woman";
@@ -158,10 +148,9 @@
             // radioButtonMan
             // 
             this.radioButtonMan.AutoSize = true;
-            this.radioButtonMan.Location = new System.Drawing.Point(98, 82);
-            this.radioButtonMan.Margin = new System.Windows.Forms.Padding(6);
+            this.radioButtonMan.Location = new System.Drawing.Point(49, 43);
             this.radioButtonMan.Name = "radioButtonMan";
-            this.radioButtonMan.Size = new System.Drawing.Size(85, 29);
+            this.radioButtonMan.Size = new System.Drawing.Size(46, 17);
             this.radioButtonMan.TabIndex = 60;
             this.radioButtonMan.TabStop = true;
             this.radioButtonMan.Text = "Man";
@@ -171,18 +160,31 @@
             // comboBoxFabric
             // 
             this.comboBoxFabric.FormattingEnabled = true;
-            this.comboBoxFabric.Location = new System.Drawing.Point(254, 178);
+            this.comboBoxFabric.Items.AddRange(new object[] {
+            "Cotton",
+            "Polyester",
+            "Linen",
+            "Silk",
+            "Wool",
+            "Denim",
+            "Rayon",
+            "Spandex or Elastane",
+            "Nylon",
+            "Viscose"});
+            this.comboBoxFabric.Location = new System.Drawing.Point(127, 93);
+            this.comboBoxFabric.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBoxFabric.Name = "comboBoxFabric";
-            this.comboBoxFabric.Size = new System.Drawing.Size(242, 33);
+            this.comboBoxFabric.Size = new System.Drawing.Size(123, 21);
             this.comboBoxFabric.TabIndex = 66;
             // 
             // labelFabric
             // 
             this.labelFabric.AutoSize = true;
             this.labelFabric.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelFabric.Location = new System.Drawing.Point(104, 175);
+            this.labelFabric.Location = new System.Drawing.Point(52, 91);
+            this.labelFabric.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelFabric.Name = "labelFabric";
-            this.labelFabric.Size = new System.Drawing.Size(107, 37);
+            this.labelFabric.Size = new System.Drawing.Size(53, 20);
             this.labelFabric.TabIndex = 65;
             this.labelFabric.Text = "Fabric";
             // 
@@ -190,25 +192,23 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(104, 238);
-            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label3.Location = new System.Drawing.Point(52, 124);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 37);
+            this.label3.Size = new System.Drawing.Size(43, 20);
             this.label3.TabIndex = 68;
             this.label3.Text = "Type";
             // 
             // comboBoxShirtType
             // 
             this.comboBoxShirtType.FormattingEnabled = true;
-            this.comboBoxShirtType.Location = new System.Drawing.Point(258, 243);
-            this.comboBoxShirtType.Margin = new System.Windows.Forms.Padding(6);
+            this.comboBoxShirtType.Location = new System.Drawing.Point(129, 126);
             this.comboBoxShirtType.Name = "comboBoxShirtType";
-            this.comboBoxShirtType.Size = new System.Drawing.Size(242, 33);
+            this.comboBoxShirtType.Size = new System.Drawing.Size(123, 21);
             this.comboBoxShirtType.TabIndex = 67;
             // 
             // UserControlShirt
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBoxShirtType);
@@ -225,9 +225,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxBrand);
             this.Controls.Add(this.label4);
-            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "UserControlShirt";
-            this.Size = new System.Drawing.Size(606, 623);
+            this.Size = new System.Drawing.Size(303, 324);
             this.ResumeLayout(false);
             this.PerformLayout();
 

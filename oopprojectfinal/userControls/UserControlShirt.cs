@@ -136,5 +136,18 @@ namespace oopprojectfinal.userControls
 
 
         }
+        public void clear()
+        {
+            comboBoxShirtType.SelectedItem = null;
+            comboBoxShirtSize.SelectedItem = null;
+            comboBoxFabric.SelectedItem = null;
+            textBoxBrand.Text = "";
+            textBoxColor.Text = "";
+            textBoxPrice.Text = "";
+            radioButtonMan.Checked = false;
+            radioButtonWoman.Checked = false;
+            radioButtonUnisex.Checked = false;
+
+        }
     }
 }

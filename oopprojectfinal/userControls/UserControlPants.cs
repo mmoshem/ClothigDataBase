@@ -109,6 +109,7 @@ namespace oopprojectfinal.userControls
             
             string type = (comboBoxPantsType.SelectedItem)?.ToString();
             string size = (comboBoxPantsSize.SelectedItem)?.ToString();
+            string fabric = (comboBoxPantsFabric.SelectedItem)?.ToString();
             //the question mark ?. is a operator that checks if the left side of ?. is null ,if yes it skips the right part and returns null
             string color = textBoxColor.Text; 
             string brand = textBoxBrand.Text;
@@ -119,7 +120,7 @@ namespace oopprojectfinal.userControls
                 return null;
             }
 
-            //double price = Double.Parse(textBoxPrice.Text);
+            
            
             
             
@@ -134,10 +135,22 @@ namespace oopprojectfinal.userControls
             
             
 
-            Pants temp = new Pants("Pants",gender,color,brand,price,"none",size,type);
+            Pants temp = new Pants("Pants",gender,color,brand,price,fabric,size,type);
             return temp;
 
         }
+        public void clear()
+        {
+            comboBoxPantsType.SelectedItem = null;
+            comboBoxPantsSize.SelectedItem = null;
+            comboBoxPantsFabric.SelectedItem = null;
+            textBoxBrand.Text = "";
+            textBoxColor.Text = "";
+            textBoxPrice.Text = "";
+            radioButtonMan.Checked = false;
+            radioButtonWoman.Checked = false;
+            radioButtonUnisex.Checked = false;
 
+        }
     }
 }

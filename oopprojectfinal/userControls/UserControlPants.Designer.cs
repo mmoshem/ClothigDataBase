@@ -42,7 +42,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.comboBoxPantsType = new System.Windows.Forms.ComboBox();
             this.labelFabric = new System.Windows.Forms.Label();
-            this.comboBoxFabric = new System.Windows.Forms.ComboBox();
+            this.comboBoxPantsFabric = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label5
@@ -186,22 +186,31 @@
             this.labelFabric.TabIndex = 63;
             this.labelFabric.Text = "Fabric";
             // 
-            // comboBoxFabric
+            // comboBoxPantsFabric
             // 
-            this.comboBoxFabric.FormattingEnabled = true;
-            this.comboBoxFabric.Items.AddRange(new object[] {
-            "defalut"});
-            this.comboBoxFabric.Location = new System.Drawing.Point(128, 84);
-            this.comboBoxFabric.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.comboBoxFabric.Name = "comboBoxFabric";
-            this.comboBoxFabric.Size = new System.Drawing.Size(123, 21);
-            this.comboBoxFabric.TabIndex = 64;
+            this.comboBoxPantsFabric.FormattingEnabled = true;
+            this.comboBoxPantsFabric.Items.AddRange(new object[] {
+            "Cotton",
+            "Polyester",
+            "Linen",
+            "Silk",
+            "Wool",
+            "Denim",
+            "Rayon",
+            "Spandex or Elastane",
+            "Nylon",
+            "Viscose"});
+            this.comboBoxPantsFabric.Location = new System.Drawing.Point(128, 84);
+            this.comboBoxPantsFabric.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBoxPantsFabric.Name = "comboBoxPantsFabric";
+            this.comboBoxPantsFabric.Size = new System.Drawing.Size(123, 21);
+            this.comboBoxPantsFabric.TabIndex = 64;
             // 
             // UserControlPants
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.comboBoxFabric);
+            this.Controls.Add(this.comboBoxPantsFabric);
             this.Controls.Add(this.labelFabric);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBoxPantsType);
@@ -240,6 +249,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBoxPantsType;
         private System.Windows.Forms.Label labelFabric;
-        private System.Windows.Forms.ComboBox comboBoxFabric;
+        private System.Windows.Forms.ComboBox comboBoxPantsFabric;
     }
 }

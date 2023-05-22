@@ -45,11 +45,9 @@ namespace oopprojectfinal
             {
 
                 // Create a new instance of the UserControlShoe
-                UserControlShoe userControlShoe = new UserControlShoe();
+                userShoe  = new UserControlShoe();
                 
-                panelForm.Controls.Add(userControlShoe);
-
-                userShoe = userControlShoe;
+                panelForm.Controls.Add(userShoe);
 
                 dataGrid.DataSource = ShoeTable;
 
@@ -59,11 +57,10 @@ namespace oopprojectfinal
                 dataGrid.DataSource = ShirtTable;
 
                 // Create a new instance of the userControlShirt
-                UserControlShirt userControlShirt = new UserControlShirt();
+                userShirt = new UserControlShirt();
 
-                panelForm.Controls.Add(userControlShirt);
+                panelForm.Controls.Add(userShirt);
 
-                userShirt = userControlShirt;
 
             }
             if (comboBoxItem.SelectedItem.ToString() == "Pants")
@@ -119,6 +116,22 @@ namespace oopprojectfinal
                 
             }
         }
+
+        private void dataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            if(userPants!=null)
+                userPants.clear();
+            if (userShoe != null)
+                userShoe.clear();
+            if (userShirt != null)
+                userShirt.clear();
+        }
+
         //////////////////////
 
     }
