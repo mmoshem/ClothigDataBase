@@ -14,8 +14,7 @@ namespace oopprojectfinal.userControls
     {
         public UserControlPants()
         {
-            InitializeComponent();
-            
+            InitializeComponent();  
         }
 
         private void UserControlPants_Load(object sender, EventArgs e)
@@ -94,31 +93,46 @@ namespace oopprojectfinal.userControls
         {
 
             string gender;
+
             if (radioButtonMan.Checked)
                 gender = radioButtonMan.Text;
             else if (radioButtonWoman.Checked)
                 gender = radioButtonWoman.Text;
-            else 
+            else if (radioButtonUnisex.Checked)
                 gender = radioButtonUnisex.Text;
+            else
+            {
+                MessageBox.Show("please fill gender", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
 
-            string type = comboBoxPantsType.SelectedItem.ToString();
-
-            string size = comboBoxPantsSize.SelectedItem.ToString();
-            string color = textBoxColor.Text;
+            
+            string type = (comboBoxPantsType.SelectedItem)?.ToString();
+            string size = (comboBoxPantsSize.SelectedItem)?.ToString();
+            //the question mark ?. is a operator that checks if the left side of ?. is null ,if yes it skips the right part and returns null
+            string color = textBoxColor.Text; 
             string brand = textBoxBrand.Text;
+
+            if(type == null || size== null || color=="" || brand=="")
+            {
+                MessageBox.Show("please fill everything", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+
             //double price = Double.Parse(textBoxPrice.Text);
+           
+            
+            
             double price=0;
             int i=0;
-            while (i == 0)
+            if(! (double.TryParse(textBoxPrice.Text,out price)))            
             {
-                if(double.TryParse(textBoxPrice.Text,out price)) { i = 1; }            
-                else
-                {
-                    string errorMessage = "Input should be a number.";
-                    MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
+                string errorMessage = "Input should be a number.";
+                MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
             }
+            
+            
 
             Pants temp = new Pants("Pants",gender,color,brand,price,"none",size,type);
             return temp;

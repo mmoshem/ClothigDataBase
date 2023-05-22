@@ -14,5 +14,6 @@ namespace oopprojectfinal
         {
             this.pantsType = pantsType;
         }
+
     }
 }

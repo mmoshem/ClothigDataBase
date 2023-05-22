@@ -81,11 +81,12 @@ namespace oopprojectfinal
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            // i want to make a pure virtual function add in clothes and override the function in pants and shirt its for the polymorfizem and also for not writing userPants.backtotheadd instead to write pants.add or shirt.add
+            
             if (userPants != null)
             {
                 Pants tmp = userPants.backToTheAdd();
-                PantsTable.Add(tmp);
+                if(tmp != null)
+                    PantsTable.Add(tmp);
             }
             if (userShirt != null)
             {
