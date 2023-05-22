@@ -206,7 +206,7 @@
             // 
             this.labelShoeType.AutoSize = true;
             this.labelShoeType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelShoeType.Location = new System.Drawing.Point(45, 85);
+            this.labelShoeType.Location = new System.Drawing.Point(45, 112);
             this.labelShoeType.Name = "labelShoeType";
             this.labelShoeType.Size = new System.Drawing.Size(43, 20);
             this.labelShoeType.TabIndex = 36;
@@ -215,21 +215,7 @@
             // comboBoxShoeType
             // 
             this.comboBoxShoeType.FormattingEnabled = true;
-            //this.comboBoxShoeType.Items.AddRange(new object[] { ////////////IM DELETEING THIS 
-            //"Jeans ",
-            //"Chinos ",
-            //"Cargo pants",
-            //"Sweatpants",
-            //"Trousers",
-            //"Harem pants",
-            //"Track pants",
-            //"Dress pants",
-            //"Khaki pants",
-            //"Corduroy pants",
-            //"Pleated pants",
-            //"Jogger pants",
-            //"Skinny pants"});
-            this.comboBoxShoeType.Location = new System.Drawing.Point(122, 84);
+            this.comboBoxShoeType.Location = new System.Drawing.Point(122, 111);
             this.comboBoxShoeType.Name = "comboBoxShoeType";
             this.comboBoxShoeType.Size = new System.Drawing.Size(121, 21);
             this.comboBoxShoeType.TabIndex = 35;

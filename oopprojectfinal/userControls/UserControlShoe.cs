@@ -61,6 +61,64 @@ namespace oopprojectfinal
                 comboBoxShoeType.Items.AddRange(new object[] {"Sneakers","Sandals"});
             }
         }
+
+        public Shoe backToTheAdd()
+        {
+
+            string gender;
+            double size;
+            double price;
+            string type;
+            string brand;
+            string color;
+
+            if (radioButtonMan.Checked)
+            {
+                gender = radioButtonMan.Text;//gender=  "man"
+            }
+            else if (radioButtonWoman.Checked)
+            {
+                gender = radioButtonWoman.Text;
+            }
+            else if (radioButtonUnisex.Checked)
+            {
+                gender = radioButtonUnisex.Text;
+            }
+            else
+            {
+                MessageBox.Show("please fill gender", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            type = comboBoxShoeType.SelectedItem?.ToString();
+            
+            color = textBoxColor.Text;//if empty it insert to    color = ""
+            brand = textBoxBrand.Text;
+
+            if (color == "" || brand == "" || type == null)
+            {
+                MessageBox.Show("please fill everything", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+
+
+            if (!(double.TryParse(comboBoxShoeSize.SelectedItem?.ToString(), out size)))
+            {
+                
+                MessageBox.Show("please fill size", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            
+            if (!(double.TryParse(textBoxPrice.Text, out price)))
+            {
+                string errorMessage = "Input should be a number.";
+                MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+
+            return new Shoe("Shoe", gender, color, brand, price,size, type);
+        }
+
+
     }
     
 }

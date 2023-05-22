@@ -124,7 +124,7 @@ namespace oopprojectfinal.userControls
             
             
             double price=0;
-            int i=0;
+          
             if(! (double.TryParse(textBoxPrice.Text,out price)))            
             {
                 string errorMessage = "Input should be a number.";

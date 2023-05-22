@@ -91,9 +91,15 @@ namespace oopprojectfinal
             if (userShirt != null)
             {
                 Shirt tmp = userShirt.backToTheAdd();
-                ShirtTable.Add(tmp);
+                if(tmp != null)
+                    ShirtTable.Add(tmp);
             }
-
+            if (userShoe != null)
+            {
+                Shoe tmp = userShoe.backToTheAdd();
+                if (tmp != null)
+                    ShoeTable.Add(tmp);
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
