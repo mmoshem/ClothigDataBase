@@ -96,7 +96,6 @@
             this.dataGrid.RowHeadersWidth = 82;
             this.dataGrid.Size = new System.Drawing.Size(815, 375);
             this.dataGrid.TabIndex = 0;
-            this.dataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_CellContentClick);
             this.dataGrid.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGrid_RowHeaderMouseClick);
             // 
             // buttonClear

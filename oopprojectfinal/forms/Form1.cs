@@ -23,6 +23,7 @@ namespace oopprojectfinal
         UserControlShirt userShirt = null;
         UserControlShoe userShoe = null;
 
+        DataGridViewRow selectedRow;
 
         public Form1()
         {
@@ -36,7 +37,7 @@ namespace oopprojectfinal
         private void comboBoxItem_SelectedIndexChanged(object sender, EventArgs e)
         {
             panelForm.Controls.Clear();
-
+            selectedRow = null;
             userShoe = null; 
             userShirt = null;
             userPants = null;
@@ -107,13 +108,45 @@ namespace oopprojectfinal
         private void update_button_Click(object sender, EventArgs e)
         {
 
+           
+            if (selectedRow!=null)
+            {
+                if (userPants != null)
+                {
+                    Pants tmp=userPants.backToTheAdd();
+
+                    PantsTable[selectedRow.Index] = tmp;
+                }   
+
+            }
         }
 
         private void dataGrid_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (dataGrid.DataSource == userPants)
+            
+            if (userPants != null)
             {
+                selectedRow = dataGrid.Rows[e.RowIndex];
+
+                // Retrieve the values from specific cells in the row
                 
+                string gender = selectedRow.Cells["Gender"].Value.ToString();
+                string type = selectedRow.Cells["pantsType"].Value.ToString();
+                string size = selectedRow.Cells["clothesSize"].Value.ToString();
+                string fabric = selectedRow.Cells["fabricType"].Value.ToString();
+                string color = selectedRow.Cells["color"].Value.ToString();
+                string brand = selectedRow.Cells["brand"].Value.ToString();
+                //double price = Convert.ToDouble(selectedRow.Cells["Price"].Value);
+                string price = selectedRow.Cells["price"].Value.ToString();
+                userPants.updatePannel(fabric,type, gender, brand, color, price, size);
+            }
+            if (userShirt != null)
+            {
+
+            }
+            if (userShoe != null)
+            {
+
             }
         }
 

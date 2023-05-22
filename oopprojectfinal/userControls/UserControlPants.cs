@@ -27,7 +27,6 @@ namespace oopprojectfinal.userControls
 
             if (radioButtonMan.Checked)
             {
-                
                 comboBoxPantsType.SelectedItem = null;
                 comboBoxPantsType.Items.Clear();
                 comboBoxPantsType.Items.AddRange(new object[] {
@@ -151,6 +150,24 @@ namespace oopprojectfinal.userControls
             radioButtonWoman.Checked = false;
             radioButtonUnisex.Checked = false;
 
+        }
+        public void updatePannel(string fabric,string type ,string gender,string brand,string color,string price,string size)
+        {
+            if (gender == radioButtonMan.Text)
+                radioButtonMan.Checked = true;
+            else if (gender == radioButtonWoman.Text)
+                radioButtonWoman.Checked = true;
+            else if (gender == radioButtonUnisex.Text)
+                radioButtonUnisex.Checked = true;
+            comboBoxPantsFabric.SelectedItem = fabric;
+
+            comboBoxPantsType.SelectedItem = type;
+            comboBoxPantsSize.SelectedItem = size;
+            textBoxBrand.Text = brand;
+            textBoxColor.Text = color;
+            textBoxPrice.Text = price;
+
+            
         }
     }
 }
