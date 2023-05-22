@@ -215,20 +215,20 @@
             // comboBoxShoeType
             // 
             this.comboBoxShoeType.FormattingEnabled = true;
-            this.comboBoxShoeType.Items.AddRange(new object[] {
-            "Jeans ",
-            "Chinos ",
-            "Cargo pants",
-            "Sweatpants",
-            "Trousers",
-            "Harem pants",
-            "Track pants",
-            "Dress pants",
-            "Khaki pants",
-            "Corduroy pants",
-            "Pleated pants",
-            "Jogger pants",
-            "Skinny pants"});
+            //this.comboBoxShoeType.Items.AddRange(new object[] { ////////////IM DELETEING THIS 
+            //"Jeans ",
+            //"Chinos ",
+            //"Cargo pants",
+            //"Sweatpants",
+            //"Trousers",
+            //"Harem pants",
+            //"Track pants",
+            //"Dress pants",
+            //"Khaki pants",
+            //"Corduroy pants",
+            //"Pleated pants",
+            //"Jogger pants",
+            //"Skinny pants"});
             this.comboBoxShoeType.Location = new System.Drawing.Point(122, 84);
             this.comboBoxShoeType.Name = "comboBoxShoeType";
             this.comboBoxShoeType.Size = new System.Drawing.Size(121, 21);

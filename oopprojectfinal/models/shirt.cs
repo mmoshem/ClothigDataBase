@@ -11,7 +11,7 @@ namespace oopprojectfinal
        public string type { get; set; }
        
 
-        public Shirt(string item,string gender , string color, string brand, double price, string style, string fubricType, string clothesSize, string type) : base(item,gender, color, brand, price, fubricType, clothesSize)
+        public Shirt(string item,string gender , string color, string brand, double price, string fubricType, string clothesSize, string type) : base(item,gender, color, brand, price, fubricType, clothesSize)
         {
             this.type = type;
         }

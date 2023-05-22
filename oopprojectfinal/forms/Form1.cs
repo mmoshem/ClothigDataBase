@@ -37,21 +37,21 @@ namespace oopprojectfinal
         {
             panelForm.Controls.Clear();
 
-            userShoe = null;
+            userShoe = null; 
             userShirt = null;
             userPants = null;
 
             if (comboBoxItem.SelectedItem.ToString() == "Shoe")
             {
 
-                dataGrid.DataSource = ShoeTable;
                 // Create a new instance of the UserControlShoe
                 UserControlShoe userControlShoe = new UserControlShoe();
-                // Add the UserControlShoe to the panel
+                
                 panelForm.Controls.Add(userControlShoe);
 
                 userShoe = userControlShoe;
 
+                dataGrid.DataSource = ShoeTable;
 
             }
             if(comboBoxItem.SelectedItem.ToString() == "Shirt")
@@ -61,7 +61,6 @@ namespace oopprojectfinal
                 // Create a new instance of the userControlShirt
                 UserControlShirt userControlShirt = new UserControlShirt();
 
-                // Add the userControlShirt to the panel
                 panelForm.Controls.Add(userControlShirt);
 
                 userShirt = userControlShirt;
@@ -74,7 +73,6 @@ namespace oopprojectfinal
                 // Create a new instance of the userControlPants
                 userPants = new UserControlPants();
 
-                // Add the userControlPants to the panel
                 panelForm.Controls.Add(userPants);
 
                 dataGrid.DataSource = PantsTable;
@@ -83,14 +81,18 @@ namespace oopprojectfinal
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-
+            // i want to make a pure virtual function add in clothes and override the function in pants and shirt its for the polymorfizem and also for not writing userPants.backtotheadd instead to write pants.add or shirt.add
             if (userPants != null)
             {
                 Pants tmp = userPants.backToTheAdd();
                 PantsTable.Add(tmp);
-            }    
-            
-            
+            }
+            if (userShirt != null)
+            {
+                Shirt tmp = userShirt.backToTheAdd();
+                ShirtTable.Add(tmp);
+            }
+
         }
 
         private void Form1_Load(object sender, EventArgs e)

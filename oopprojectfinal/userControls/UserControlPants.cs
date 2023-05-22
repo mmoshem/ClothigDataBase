@@ -53,7 +53,7 @@ namespace oopprojectfinal.userControls
             if (radioButtonWoman.Checked)
             {
                 comboBoxPantsType.SelectedItem = null;
-                comboBoxPantsType.Items.Clear();////////////////////////////////////////////////not influencing ?
+                comboBoxPantsType.Items.Clear();
                 comboBoxPantsType.Items.AddRange(new object[] {
                 "Jeans",
                 "Chinos",
@@ -120,7 +120,7 @@ namespace oopprojectfinal.userControls
 
             }
 
-            Pants temp = new Pants("Pants",gender,color,brand,price,"none",size,"fat");
+            Pants temp = new Pants("Pants",gender,color,brand,price,"none",size,type);
             return temp;
 
         }
