@@ -17,6 +17,7 @@ namespace oopprojectfinal
         public double price { get; set; }
         public string item { get; set; }
 
+        public abstract void showPic();
         public Clothing(string item, string gender, string color,string brand, double price )
         { 
             this.gender = gender;

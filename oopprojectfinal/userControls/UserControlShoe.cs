@@ -130,6 +130,22 @@ namespace oopprojectfinal
             radioButtonUnisex.Checked = false;
 
         }
+
+        public void updatePannel(string type, string gender, string brand, string color, string price, string size)
+        {
+            if (gender == radioButtonMan.Text)
+                radioButtonMan.Checked = true;
+            else if (gender == radioButtonWoman.Text)
+                radioButtonWoman.Checked = true;
+            else if (gender == radioButtonUnisex.Text)
+                radioButtonUnisex.Checked = true;
+
+            comboBoxShoeType.SelectedItem = type;
+            comboBoxShoeSize.SelectedItem = size;
+            textBoxBrand.Text = brand;
+            textBoxColor.Text = color;
+            textBoxPrice.Text = price;
+        }
     }
     
 }

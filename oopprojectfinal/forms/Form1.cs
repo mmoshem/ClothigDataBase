@@ -28,7 +28,18 @@ namespace oopprojectfinal
         public Form1()
         {
             InitializeComponent();
-            
+
+
+            //(new Pants("pa", "saf", "asd", "sad", 0, "asd", "as", "asd")).showPic();
+
+            PictureBox pb = new PictureBox();
+            pb.Image = Image.FromFile(@"C:\Users\mmosh\Desktop\oopprojectfinal\oopprojectfinal\imeges\pants\first.jpg");
+            pb.SizeMode = PictureBoxSizeMode.StretchImage;//makes the pic in the size of the image
+            pb.Size = new Size(100, 100);//size of the frame 
+            pb.Location = new Point(500,50);
+
+
+            this.Controls.Add(pb);//works without this 
         }
 
 
@@ -84,7 +95,18 @@ namespace oopprojectfinal
             {
                 Pants tmp = userPants.backToTheAdd();
                 if(tmp != null)
+                {
                     PantsTable.Add(tmp);
+                    PictureBox pb = new PictureBox();
+                    pb.Image = Image.FromFile(@"C:\Users\mmosh\Desktop\oopprojectfinal\oopprojectfinal\imeges\pants\first.jpg");
+                    pb.SizeMode = PictureBoxSizeMode.StretchImage;//makes the pic in the size of the image
+                    pb.Size = new Size(150, 100);//size of the frame 
+                    pb.Location = new Point(500, 50);
+
+
+                    this.Controls.Add(pb);//the this is the form
+                }
+
             }
             if (userShirt != null)
             {
@@ -107,29 +129,50 @@ namespace oopprojectfinal
 
         private void update_button_Click(object sender, EventArgs e)
         {
-
-           
             if (selectedRow!=null)
             {
+                if (userShirt != null)
+                {
+                    Shirt tmp = userShirt.backToTheAdd();
+
+                    //we go to the ShirtTableLIst ,we know that "selectedRow" has its index of the selected row in the dataGrid. 
+                    //so we go the place of the node of the ShirtTableLIst and there is a Shirt opject inside . we change it to the tmp which is also Shirt object 
+                    ShirtTable[selectedRow.Index] = tmp;
+                }
                 if (userPants != null)
                 {
                     Pants tmp=userPants.backToTheAdd();
 
+                    //we go to the pantsTableLIst ,we know that "selectedRow" has its index of the selected row in the dataGrid. 
+                    //so we go the place of the node of the pantsTableLIst and there is a Pants opject inside . we change it to the tmp which is also Pants object 
                     PantsTable[selectedRow.Index] = tmp;
-                }   
+                }
+                if (userShoe != null)
+                {
+                    Shoe tmp = userShoe.backToTheAdd();
+
+                    //we go to the ShoeTableLIst ,we know that "selectedRow" has its index of the selected row in the dataGrid. 
+                    //so we go the place of the node of the ShoeTableLIst and there is a Shoe opject inside . we change it to the tmp which is also Shoe object 
+                    ShoeTable[selectedRow.Index] = tmp;
+                }
 
             }
         }
+        
+           
 
         private void dataGrid_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             
             if (userPants != null)
             {
+
                 selectedRow = dataGrid.Rows[e.RowIndex];
+                //PantsTable[e.RowIndex].showPic();
+
 
                 // Retrieve the values from specific cells in the row
-                
+
                 string gender = selectedRow.Cells["Gender"].Value.ToString();
                 string type = selectedRow.Cells["pantsType"].Value.ToString();
                 string size = selectedRow.Cells["clothesSize"].Value.ToString();
@@ -142,11 +185,34 @@ namespace oopprojectfinal
             }
             if (userShirt != null)
             {
+                selectedRow = dataGrid.Rows[e.RowIndex];
 
+                // Retrieve the values from specific cells in the row
+
+                string gender = selectedRow.Cells["Gender"].Value.ToString();
+                string type = selectedRow.Cells["type"].Value.ToString();
+                string size = selectedRow.Cells["clothesSize"].Value.ToString();
+                string fabric = selectedRow.Cells["fabricType"].Value.ToString();
+                string color = selectedRow.Cells["color"].Value.ToString();
+                string brand = selectedRow.Cells["brand"].Value.ToString();
+                //double price = Convert.ToDouble(selectedRow.Cells["Price"].Value);
+                string price = selectedRow.Cells["price"].Value.ToString();
+                userShirt.updatePannel(fabric, type, gender, brand, color, price, size);
             }
             if (userShoe != null)
             {
+                selectedRow = dataGrid.Rows[e.RowIndex];
 
+                // Retrieve the values from specific cells in the row
+
+                string gender = selectedRow.Cells["Gender"].Value.ToString();
+                string type = selectedRow.Cells["type"].Value.ToString();
+                string size = selectedRow.Cells["shoeSize"].Value.ToString();
+                string color = selectedRow.Cells["color"].Value.ToString();
+                string brand = selectedRow.Cells["brand"].Value.ToString();
+                //double price = Convert.ToDouble(selectedRow.Cells["Price"].Value);
+                string price = selectedRow.Cells["price"].Value.ToString();
+                userShoe.updatePannel(type, gender, brand, color, price, size);
             }
         }
 
@@ -163,6 +229,19 @@ namespace oopprojectfinal
                 userShoe.clear();
             if (userShirt != null)
                 userShirt.clear();
+        }
+
+        private void showPic_Click(object sender, EventArgs e)
+        {
+            if (userPants != null)
+            {
+                if (selectedRow!=null)
+                {
+                    Pants obj = PantsTable[selectedRow.Index]; 
+                    obj.showPic();
+
+                }
+            }
         }
 
         //////////////////////
