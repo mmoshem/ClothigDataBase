@@ -17,7 +17,10 @@ namespace oopprojectfinal
         public double price { get; set; }
         public string item { get; set; }
 
+        public PictureBox pb { get; set; }
         public abstract void showPic();
+        //public abstract void createPic();
+
         public Clothing(string item, string gender, string color,string brand, double price )
         { 
             this.gender = gender;
@@ -25,6 +28,8 @@ namespace oopprojectfinal
             this.brand = brand;
             this.item = item;
             this.price = price;
+
+            pb = new PictureBox();
         }
        
     }

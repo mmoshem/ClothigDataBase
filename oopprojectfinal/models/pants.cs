@@ -37,6 +37,12 @@ namespace oopprojectfinal
         public Pants(string item, string gender,  string color, string brand, double price, string fubricType,string clothesSize , string pantsType) : base( item, gender,color, brand, price, fubricType, clothesSize)
         {
             this.pantsType = pantsType;
+            
+            pb.Image = Image.FromFile(@"C:\Users\mmosh\Desktop\oopprojectfinal\oopprojectfinal\imeges\pants\first.jpg");
+            pb.SizeMode = PictureBoxSizeMode.StretchImage;//makes the pic in the size of the image
+            pb.Size = new Size(100, 100);//size of the frame 
+            pb.Location = new Point(0, 0);
+
         }
         
     }

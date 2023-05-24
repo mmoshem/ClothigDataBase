@@ -24,23 +24,30 @@ namespace oopprojectfinal
         UserControlShoe userShoe = null;
 
         DataGridViewRow selectedRow;
-        PictureBox pb = new PictureBox();
+        List<PictureBox> pbLsit = new List<PictureBox>();
 
+        bool isMouseClicked = false;
         public Form1()
         {
             InitializeComponent();
 
+            Pants tmp = new Pants("shit","dude","bla","Ikea",0,"jeans","fabric","fack");
+            PantsTable.Add(tmp);
+            tmp.pb.MouseDown += pic_MouseDown;
+            tmp.pb.MouseMove += pic_MouseMove;
+            tmp.pb.MouseUp += pic_MouseUp;
+            tmp.pb.Location = new Point(500,500);
+            pbLsit.Add(tmp.pb);
+            this.Controls.Add(tmp.pb);//the "this" is the form
 
-            //(new Pants("pa", "saf", "asd", "sad", 0, "asd", "as", "asd")).showPic();
-
-            //PictureBox pb = new PictureBox();
-            //pb.Image = Image.FromFile(@"C:\Users\mmosh\Desktop\oopprojectfinal\oopprojectfinal\imeges\pants\first.jpg");
-            //pb.SizeMode = PictureBoxSizeMode.StretchImage;//makes the pic in the size of the image
-            //pb.Size = new Size(100, 100);//size of the frame 
-            //pb.Location = new Point(500,50);
-
-
-            //this.Controls.Add(pb);//works without this 
+            tmp = new Pants("asfag", "afdagdg", "sgdgss", "sgdgsgg", 2, "sgsgg", "gsdsdggd", "sdggdsg");
+            PantsTable.Add(tmp);
+            tmp.pb.MouseDown += pic_MouseDown;
+            tmp.pb.MouseMove += pic_MouseMove;
+            tmp.pb.MouseUp += pic_MouseUp;
+            tmp.pb.Location = new Point(500,700);
+            pbLsit.Add(tmp.pb);
+            this.Controls.Add(tmp.pb);//the "this" is the form
         }
 
 
@@ -98,13 +105,14 @@ namespace oopprojectfinal
                 if(tmp != null)
                 {
                     PantsTable.Add(tmp);
+                    ClothingTable.Add(tmp);
 
+                    tmp.pb.MouseDown += pic_MouseDown;
+                    tmp.pb.MouseMove += pic_MouseMove;
+                    tmp.pb.MouseUp += pic_MouseUp;
 
-                    pb.Image = Image.FromFile(@"C:\Users\mmosh\Desktop\oopprojectfinal\oopprojectfinal\imeges\pants\pants.jpg");
-                    pb.SizeMode = PictureBoxSizeMode.StretchImage;//makes the pic in the size of the image
-                    pb.Size = new Size(150, 100);//size of the frame 
-                    pb.Location = new Point(500, 50);
-                    this.Controls.Add(pb);//the this is the form
+                    pbLsit.Add(tmp.pb);
+                    this.Controls.Add(tmp.pb);//the "this" is the form
                 }
 
             }
@@ -114,21 +122,26 @@ namespace oopprojectfinal
                 if(tmp != null)
                 {
                     ShirtTable.Add(tmp);
+                    ClothingTable.Add(tmp);
 
 
-                    
-                    pb.Image = Image.FromFile(@"C:\Users\mmosh\Desktop\oopprojectfinal\oopprojectfinal\imeges\shirt\shirt.jpg");
-                    pb.SizeMode = PictureBoxSizeMode.StretchImage;//makes the pic in the size of the image
-                    pb.Size = new Size(150, 100);//size of the frame 
-                    pb.Location = new Point(500, 50);
-                    this.Controls.Add(pb);//the this is the form
+
+                    //pb.Image = Image.FromFile(@"C:\Users\mmosh\Desktop\oopprojectfinal\oopprojectfinal\imeges\shirt\shirt.jpg");
+                    //pb.SizeMode = PictureBoxSizeMode.StretchImage;//makes the pic in the size of the image
+                    //pb.Size = new Size(150, 100);//size of the frame 
+                    //pb.Location = new Point(500, 50);
+                    //this.Controls.Add(pb);//the this is the form
                 }
             }
             if (userShoe != null)
             {
                 Shoe tmp = userShoe.backToTheAdd();
                 if (tmp != null)
+                {
                     ShoeTable.Add(tmp);
+                    ClothingTable.Add(tmp);
+
+                }
             }
         }
 
@@ -254,10 +267,40 @@ namespace oopprojectfinal
             }
         }
 
-        private void Form1_MouseDown(object sender, MouseEventArgs e)
-        {
-            pb.Location = new Point(MousePosition.X-100, MousePosition.Y-100);
+        
 
+        private void pic_MouseDown(object sender, MouseEventArgs e)
+        {
+            isMouseClicked = true;
+
+            foreach (Pants p in PantsTable)
+            {
+                    if (p.pb == sender)
+                    {
+                        dataGrid.ClearSelection();
+                        dataGrid.DataSource = PantsTable;
+                        selectedRow = dataGrid.Rows[PantsTable.IndexOf(p)];
+                        selectedRow.Selected = true;
+
+                    }
+            }
+        }
+
+        private void pic_MouseUp(object sender, MouseEventArgs e)
+        {
+            isMouseClicked = false;
+        }
+
+        private void pic_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isMouseClicked)
+            {
+                    if (selectedRow != null)
+                    {
+                        PictureBox pb = PantsTable[selectedRow.Index].pb;
+                        pb.Location = new Point(MousePosition.X - pb.Size.Width / 2, MousePosition.Y - pb.Size.Height / 2); 
+                    }
+            }
         }
 
         //////////////////////
