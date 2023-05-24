@@ -16,9 +16,9 @@ namespace oopprojectfinal
         {
             using (Form form = new Form())
             {
-                string relativePath = @"Images\Pants\sp-pgm-dc-11.jpg"; // Provide the correct relative path to the image file
+                //string relativePath = @"Images\Pants\sp-pgm-dc-11.jpg"; // Provide the correct relative path to the image file
 
-                string imagePath = System.IO.Path.Combine(Application.StartupPath, relativePath);
+                string imagePath = System.IO.Path.Combine(Application.StartupPath/*, relativePath*/);
                 //@"C:\Users\mmosh\Desktop\oopprojectfinal\oopprojectfinal\imeges\pants\365132_308_XL.jpg"
 
 
@@ -38,6 +38,6 @@ namespace oopprojectfinal
         {
             this.pantsType = pantsType;
         }
-
+        
     }
 }

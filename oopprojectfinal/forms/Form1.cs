@@ -24,6 +24,7 @@ namespace oopprojectfinal
         UserControlShoe userShoe = null;
 
         DataGridViewRow selectedRow;
+        PictureBox pb = new PictureBox();
 
         public Form1()
         {
@@ -32,14 +33,14 @@ namespace oopprojectfinal
 
             //(new Pants("pa", "saf", "asd", "sad", 0, "asd", "as", "asd")).showPic();
 
-            PictureBox pb = new PictureBox();
-            pb.Image = Image.FromFile(@"C:\Users\mmosh\Desktop\oopprojectfinal\oopprojectfinal\imeges\pants\first.jpg");
-            pb.SizeMode = PictureBoxSizeMode.StretchImage;//makes the pic in the size of the image
-            pb.Size = new Size(100, 100);//size of the frame 
-            pb.Location = new Point(500,50);
+            //PictureBox pb = new PictureBox();
+            //pb.Image = Image.FromFile(@"C:\Users\mmosh\Desktop\oopprojectfinal\oopprojectfinal\imeges\pants\first.jpg");
+            //pb.SizeMode = PictureBoxSizeMode.StretchImage;//makes the pic in the size of the image
+            //pb.Size = new Size(100, 100);//size of the frame 
+            //pb.Location = new Point(500,50);
 
 
-            this.Controls.Add(pb);//works without this 
+            //this.Controls.Add(pb);//works without this 
         }
 
 
@@ -97,13 +98,12 @@ namespace oopprojectfinal
                 if(tmp != null)
                 {
                     PantsTable.Add(tmp);
-                    PictureBox pb = new PictureBox();
-                    pb.Image = Image.FromFile(@"C:\Users\mmosh\Desktop\oopprojectfinal\oopprojectfinal\imeges\pants\first.jpg");
+
+
+                    pb.Image = Image.FromFile(@"C:\Users\mmosh\Desktop\oopprojectfinal\oopprojectfinal\imeges\pants\pants.jpg");
                     pb.SizeMode = PictureBoxSizeMode.StretchImage;//makes the pic in the size of the image
                     pb.Size = new Size(150, 100);//size of the frame 
                     pb.Location = new Point(500, 50);
-
-
                     this.Controls.Add(pb);//the this is the form
                 }
 
@@ -112,7 +112,17 @@ namespace oopprojectfinal
             {
                 Shirt tmp = userShirt.backToTheAdd();
                 if(tmp != null)
+                {
                     ShirtTable.Add(tmp);
+
+
+                    
+                    pb.Image = Image.FromFile(@"C:\Users\mmosh\Desktop\oopprojectfinal\oopprojectfinal\imeges\shirt\shirt.jpg");
+                    pb.SizeMode = PictureBoxSizeMode.StretchImage;//makes the pic in the size of the image
+                    pb.Size = new Size(150, 100);//size of the frame 
+                    pb.Location = new Point(500, 50);
+                    this.Controls.Add(pb);//the this is the form
+                }
             }
             if (userShoe != null)
             {
@@ -242,6 +252,12 @@ namespace oopprojectfinal
 
                 }
             }
+        }
+
+        private void Form1_MouseDown(object sender, MouseEventArgs e)
+        {
+            pb.Location = new Point(MousePosition.X-100, MousePosition.Y-100);
+
         }
 
         //////////////////////

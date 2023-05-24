@@ -113,7 +113,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="imeges\pants\first.jpg" />
+    <Content Include="imeges\pants\pants.jpg" />
     <Content Include="imeges\pants\sp-pgm-dc-11.jpg" />
+    <Content Include="imeges\shirt\shirt.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
