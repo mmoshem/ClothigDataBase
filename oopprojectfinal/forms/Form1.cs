@@ -251,8 +251,11 @@ namespace oopprojectfinal
             {
                 if (selectedRow != null)
                 {
-                    PictureBox pb = PantsTable[selectedRow.Index].pb;
-                    pb.Location = new Point(MousePosition.X - pictureHolder.Location.X - pb.Size.Width / 2, MousePosition.Y - pictureHolder.Location.Y - pb.Size.Height / 2);
+                    if (pictureHolder.Bounds.Contains(MousePosition))
+                    {
+                        PictureBox pb = PantsTable[selectedRow.Index].pb;
+                        pb.Location = new Point(MousePosition.X - pictureHolder.Location.X - pb.Size.Width / 2, MousePosition.Y - pictureHolder.Location.Y - pb.Size.Height / 2);
+                    }
                 }
             }
         }
