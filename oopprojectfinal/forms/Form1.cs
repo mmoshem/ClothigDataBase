@@ -36,18 +36,18 @@ namespace oopprojectfinal
             tmp.pb.MouseDown += pic_MouseDown;
             tmp.pb.MouseMove += pic_MouseMove;
             tmp.pb.MouseUp += pic_MouseUp;
-            tmp.pb.Location = new Point(500,500);
+            tmp.pb.Location = new Point(0,0);
             pbLsit.Add(tmp.pb);
-            this.Controls.Add(tmp.pb);//the "this" is the form
+            pictureHolder.Controls.Add(tmp.pb);//the "this" is the form
 
             tmp = new Pants("asfag", "afdagdg", "sgdgss", "sgdgsgg", 2, "sgsgg", "gsdsdggd", "sdggdsg");
             PantsTable.Add(tmp);
             tmp.pb.MouseDown += pic_MouseDown;
             tmp.pb.MouseMove += pic_MouseMove;
             tmp.pb.MouseUp += pic_MouseUp;
-            tmp.pb.Location = new Point(500,700);
+            tmp.pb.Location = new Point(0,0);
             pbLsit.Add(tmp.pb);
-            this.Controls.Add(tmp.pb);//the "this" is the form
+            pictureHolder.Controls.Add(tmp.pb);//the "this" is the form
         }
 
 
@@ -112,7 +112,7 @@ namespace oopprojectfinal
                     tmp.pb.MouseUp += pic_MouseUp;
 
                     pbLsit.Add(tmp.pb);
-                    this.Controls.Add(tmp.pb);//the "this" is the form
+                    pictureHolder.Controls.Add(tmp.pb);//the "this" is the form
                 }
 
             }
@@ -298,7 +298,7 @@ namespace oopprojectfinal
                     if (selectedRow != null)
                     {
                         PictureBox pb = PantsTable[selectedRow.Index].pb;
-                        pb.Location = new Point(MousePosition.X - pb.Size.Width / 2, MousePosition.Y - pb.Size.Height / 2); 
+                        pb.Location = new Point(MousePosition.X - pictureHolder.Location.X - pb.Size.Width / 2, MousePosition.Y - pictureHolder.Location.Y - pb.Size.Height / 2); 
                     }
             }
         }

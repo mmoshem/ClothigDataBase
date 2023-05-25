@@ -18,6 +18,7 @@ namespace oopprojectfinal
         public string item { get; set; }
 
         public PictureBox pb { get; set; }
+
         public abstract void showPic();
         //public abstract void createPic();
 

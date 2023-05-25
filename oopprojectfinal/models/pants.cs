@@ -50,8 +50,6 @@ namespace oopprojectfinal
             pb.Image = Image.FromFile(imagePath);
             pb.SizeMode = PictureBoxSizeMode.StretchImage;//makes the pic in the size of the image
             pb.Size = new Size(100, 100);//size of the frame 
-            pb.Location = new Point(0, 0);
-
         }
         
     }
