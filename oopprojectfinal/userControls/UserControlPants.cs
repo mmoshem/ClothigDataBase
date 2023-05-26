@@ -94,7 +94,7 @@ namespace oopprojectfinal.userControls
             string gender;
 
             if (radioButtonMan.Checked)
-                gender = radioButtonMan.Text;
+                gender = radioButtonMan.Text; //Man
             else if (radioButtonWoman.Checked)
                 gender = radioButtonWoman.Text;
             else if (radioButtonUnisex.Checked)
@@ -113,7 +113,7 @@ namespace oopprojectfinal.userControls
             string color = textBoxColor.Text; 
             string brand = textBoxBrand.Text;
 
-            if(type == null || size== null || color=="" || brand=="")
+            if(type == null || size== null || fabric == null || color=="" || brand=="")
             {
                 MessageBox.Show("please fill everything", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;

@@ -24,11 +24,11 @@ namespace oopprojectfinal
         UserControlShoe userShoe = null;
 
         DataGridViewRow selectedRow;
-        List<PictureBox> pbLsit = new List<PictureBox>();
+        List<PictureBox> pbList = new List<PictureBox>();
 
-        bool isMouseClicked = false;
+       
         bool mouseLeft = false;
-        bool mouseRight = false;
+      
 
         public Form1()
         {
@@ -40,7 +40,7 @@ namespace oopprojectfinal
             tmp.pb.MouseMove += pic_MouseMove;
             tmp.pb.MouseUp += pic_MouseUp;
             tmp.pb.Location = new Point(0, 0);
-            pbLsit.Add(tmp.pb);
+            pbList.Add(tmp.pb);
             pictureHolder.Controls.Add(tmp.pb);//the "this" is the form
 
             tmp = new Pants("Pants", "Woman", "tahat", "Nintendo", 321, "Linen", "XL", "Culottes");
@@ -49,19 +49,18 @@ namespace oopprojectfinal
             tmp.pb.MouseMove += pic_MouseMove;
             tmp.pb.MouseUp += pic_MouseUp;
             tmp.pb.Location = new Point(0, 0);
-            pbLsit.Add(tmp.pb);
+            pbList.Add(tmp.pb);
             pictureHolder.Controls.Add(tmp.pb);//the "this" is the form
         }
 
 
-
-
+        
         private void comboBoxItem_SelectedIndexChanged(object sender, EventArgs e)
         {
             panelForm.Controls.Clear();
             selectedRow = null;
             userShoe = null;
-            userShirt = null;
+            userShirt = null; 
             userPants = null;
 
             if (comboBoxItem.SelectedItem.ToString() == "Shoe")
@@ -71,7 +70,7 @@ namespace oopprojectfinal
                 userShoe = new UserControlShoe();
 
                 panelForm.Controls.Add(userShoe);
-
+                
                 dataGrid.DataSource = ShoeTable;
 
             }
@@ -104,22 +103,23 @@ namespace oopprojectfinal
 
             if (userPants != null)
             {
-                Pants tmp = userPants.backToTheAdd();
-                if (tmp != null)
+                
+                Pants tmp_pants = userPants.backToTheAdd();
+                if (tmp_pants != null)
                 {
-                    PantsTable.Add(tmp);
-                    ClothingTable.Add(tmp);
+                    PantsTable.Add(tmp_pants);
+                    ClothingTable.Add(tmp_pants);
 
-                    tmp.pb.MouseDown += pic_MouseDown;
-                    tmp.pb.MouseMove += pic_MouseMove;
-                    tmp.pb.MouseUp += pic_MouseUp;
+                    tmp_pants.pb.MouseDown += pic_MouseDown;  
+                    tmp_pants.pb.MouseMove += pic_MouseMove;
+                    tmp_pants.pb.MouseUp += pic_MouseUp;
 
-                    pbLsit.Add(tmp.pb);
-                    pictureHolder.Controls.Add(tmp.pb);//the "this" is the form
+                    pbList.Add(tmp_pants.pb);
+                    pictureHolder.Controls.Add(tmp_pants.pb);//the "this" is the form
                 }
 
             }
-            if (userShirt != null)
+            else if (userShirt != null)
             {
                 Shirt tmp = userShirt.backToTheAdd();
                 if (tmp != null)
@@ -136,7 +136,7 @@ namespace oopprojectfinal
                     //this.Controls.Add(pb);//the this is the form
                 }
             }
-            if (userShoe != null)
+            else if (userShoe != null)
             {
                 Shoe tmp = userShoe.backToTheAdd();
                 if (tmp != null)
@@ -145,8 +145,17 @@ namespace oopprojectfinal
                     ClothingTable.Add(tmp);
 
                 }
+                
             }
+            else
+            {
+                  MessageBox.Show("please select item first", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
+
+
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -162,8 +171,8 @@ namespace oopprojectfinal
                     Pants tmp = userPants.backToTheAdd();
                     //we go to the pantsTableLIst ,we know that "selectedRow" has its index of the selected row in the dataGrid. 
                     //so we go the place of the node of the pantsTableLIst and there is a Pants opject inside . we change it to the tmp which is also Pants object 
-                    pbLsit.Remove(PantsTable[selectedRow.Index].pb);
-                    pbLsit.Add(tmp.pb);
+                    pbList.Remove(PantsTable[selectedRow.Index].pb);
+                    pbList.Add(tmp.pb);
                     PantsTable[selectedRow.Index] = tmp;
                 }
                 if (userShirt != null)
@@ -182,6 +191,7 @@ namespace oopprojectfinal
                     //so we go the place of the node of the ShoeTableLIst and there is a Shoe opject inside . we change it to the tmp which is also Shoe object 
                     ShoeTable[selectedRow.Index] = tmp;
                 }
+              
 
             }
         }
@@ -236,28 +246,29 @@ namespace oopprojectfinal
                 // Find the selected index based on the clicked PictureBox
 
 
-                for (int i = 0; i < pbLsit.Count; i++)
+                for (int i = 0; i < pbList.Count; i++)
                 {
-                    if (pbLsit[i] == clickedPictureBox)
+                    if (pbList[i] == clickedPictureBox)
                     {
                         selectedIndex = i;
                         break;
                     }
                 }
 
-                if (selectedIndex >= 0 && selectedIndex < pbLsit.Count)
+                if (selectedIndex >= 0 && selectedIndex < pbList.Count)
                 {
                     // Remove the corresponding row from the DataGridView
                     if (selectedIndex < PantsTable.Count)
                     {
                         PantsTable.RemoveAt(selectedIndex);
+                        //ClothingTable.RemoveAt(selectedIndex);???????daniel?are we doing show clothingtable ?
                         dataGrid.DataSource = null;
                         dataGrid.DataSource = PantsTable;
                     }
 
                     // Remove the clicked PictureBox from the pictureHolder.Controls
                     pictureHolder.Controls.Remove(clickedPictureBox);
-                    pbLsit.Remove(clickedPictureBox);
+                    pbList.Remove(clickedPictureBox);
                 }
 
                 return;
@@ -303,12 +314,13 @@ namespace oopprojectfinal
 
         private void pic_MouseUp(object sender, MouseEventArgs e)
         {
-            isMouseClicked = false;
+            
             mouseLeft = false;
             
             
         }
 
+        
         private void pic_MouseMove(object sender, MouseEventArgs e)
         {
             if (/*isMouseClicked*/mouseLeft)
