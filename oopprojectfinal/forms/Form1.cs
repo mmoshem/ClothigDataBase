@@ -34,8 +34,8 @@ namespace oopprojectfinal
         {
             InitializeComponent();
 
-            Pants tmp = new Pants("Pants", "Man", "khaki", "Nintendo", 123, "Silk", "M", "Cargo pants");
-            PantsTable.Add(tmp);
+            Shirt tmp = new Shirt("Shirt", "Unisex", "brown", "Nintendo", 123, "Silk", "M", "Dress Shirt");
+            ShirtTable.Add(tmp);
             ClothingTable.Add(tmp);
             tmp.pb.MouseDown += pic_MouseDown;
             tmp.pb.MouseMove += pic_MouseMove;
@@ -44,15 +44,15 @@ namespace oopprojectfinal
             pbList.Add(tmp.pb);
             pictureHolder.Controls.Add(tmp.pb);//the "this" is the form
 
-            tmp = new Pants("Pants", "Woman", "black", "Nintendo", 321, "Linen", "XL", "Culottes");
-            PantsTable.Add(tmp);
-            ClothingTable.Add(tmp);
-            tmp.pb.MouseDown += pic_MouseDown;
-            tmp.pb.MouseMove += pic_MouseMove;
-            tmp.pb.MouseUp += pic_MouseUp;
-            tmp.pb.Location = new Point(0, 0);
-            pbList.Add(tmp.pb);
-            pictureHolder.Controls.Add(tmp.pb);//the "this" is the form
+            Pants tmp2 = new Pants("Pants", "Woman", "black", "Nintendo", 321, "Linen", "XL", "Culottes");
+            PantsTable.Add(tmp2);
+            ClothingTable.Add(tmp2);
+            tmp2.pb.MouseDown += pic_MouseDown;
+            tmp2.pb.MouseMove += pic_MouseMove;
+            tmp2.pb.MouseUp += pic_MouseUp;
+            tmp2.pb.Location = new Point(0, 0);
+            pbList.Add(tmp2.pb);
+            pictureHolder.Controls.Add(tmp2.pb);//the "this" is the form
         }
 
 
@@ -179,64 +179,72 @@ namespace oopprojectfinal
             {
                 if (userPants != null)
                 {
+
                     Pants tmp = userPants.backToTheAdd();
-                    tmp.pb.MouseDown += pic_MouseDown;
-                    tmp.pb.MouseMove += pic_MouseMove;
-                    tmp.pb.MouseUp += pic_MouseUp;
-                    tmp.pb.Location = PantsTable[selectedRow.Index].pb.Location;
+                    if (tmp != null)
+                    {
+                        tmp.pb.MouseDown += pic_MouseDown;
+                        tmp.pb.MouseMove += pic_MouseMove;
+                        tmp.pb.MouseUp += pic_MouseUp;
+                        tmp.pb.Location = PantsTable[selectedRow.Index].pb.Location;
+
+                        pbList.Remove(PantsTable[selectedRow.Index].pb);
+                        pictureHolder.Controls.Remove(PantsTable[selectedRow.Index].pb);
+                        pictureHolder.Controls.Add(tmp.pb);
+
+                        pbList.Add(tmp.pb);
+
+                        ClothingTable.Remove((Clothing)PantsTable[selectedRow.Index]);
+                        ClothingTable.Add((Clothing)tmp);
+
+
+                        PantsTable[selectedRow.Index] = tmp;
+                    }
                    
-                    pbList.Remove(PantsTable[selectedRow.Index].pb);
-                    pictureHolder.Controls.Remove(PantsTable[selectedRow.Index].pb);
-                    pictureHolder.Controls.Add(tmp.pb);
-
-                    pbList.Add(tmp.pb);
-
-                    ClothingTable.Remove((Clothing)PantsTable[selectedRow.Index]);
-                    ClothingTable.Add((Clothing)tmp);
-
-
-                    PantsTable[selectedRow.Index] = tmp;
-
                     //we go to the pantsTableLIst ,we know that "selectedRow" has its index of the selected row in the dataGrid. 
                     //so we go the place of the node of the pantsTableLIst and there is a Pants opject inside . we change it to the tmp which is also Pants object 
                 }
                 if (userShirt != null)
                 {
                     Shirt tmp_shirt = userShirt.backToTheAdd();
+                    if (tmp_shirt != null)
+                    {
+                        tmp_shirt.pb.MouseDown += pic_MouseDown;
+                        tmp_shirt.pb.MouseMove += pic_MouseMove;
+                        tmp_shirt.pb.MouseUp += pic_MouseUp;
+                        tmp_shirt.pb.Location = ShirtTable[selectedRow.Index].pb.Location;
 
-                    tmp_shirt.pb.MouseDown += pic_MouseDown;
-                    tmp_shirt.pb.MouseMove += pic_MouseMove;
-                    tmp_shirt.pb.MouseUp += pic_MouseUp;
-                    tmp_shirt.pb.Location = ShirtTable[selectedRow.Index].pb.Location;
+                        pbList.Remove(ShirtTable[selectedRow.Index].pb);
+                        pictureHolder.Controls.Remove(ShirtTable[selectedRow.Index].pb);
+                        pictureHolder.Controls.Add(tmp_shirt.pb);
+                        pbList.Add(tmp_shirt.pb);
 
-                    pbList.Remove(ShirtTable[selectedRow.Index].pb);
-                    pictureHolder.Controls.Remove(ShirtTable[selectedRow.Index].pb);
-                    pictureHolder.Controls.Add(tmp_shirt.pb);
-                    pbList.Add(tmp_shirt.pb);
+                        ClothingTable.Remove((Clothing)ShirtTable[selectedRow.Index]);
+                        ClothingTable.Add((Clothing)tmp_shirt);
 
-                    ClothingTable.Remove((Clothing)ShirtTable[selectedRow.Index]);
-                    ClothingTable.Add((Clothing)tmp_shirt);
-
-                    ShirtTable[selectedRow.Index] = tmp_shirt;
+                        ShirtTable[selectedRow.Index] = tmp_shirt;
+                    }
                 }
                 if (userShoe != null)
                 {
                     Shoe tmp_shoe = userShoe.backToTheAdd();
+                    if (tmp_shoe != null)
+                    {
+                        tmp_shoe.pb.MouseDown += pic_MouseDown;
+                        tmp_shoe.pb.MouseMove += pic_MouseMove;
+                        tmp_shoe.pb.MouseUp += pic_MouseUp;
+                        tmp_shoe.pb.Location = ShoeTable[selectedRow.Index].pb.Location;
 
-                    tmp_shoe.pb.MouseDown += pic_MouseDown;
-                    tmp_shoe.pb.MouseMove += pic_MouseMove;
-                    tmp_shoe.pb.MouseUp += pic_MouseUp;
-                    tmp_shoe.pb.Location = ShoeTable[selectedRow.Index].pb.Location;
+                        pbList.Remove(ShoeTable[selectedRow.Index].pb);
+                        pictureHolder.Controls.Remove(ShoeTable[selectedRow.Index].pb);
+                        pictureHolder.Controls.Add(tmp_shoe.pb);
+                        pbList.Add(tmp_shoe.pb);
 
-                    pbList.Remove(ShoeTable[selectedRow.Index].pb);
-                    pictureHolder.Controls.Remove(ShoeTable[selectedRow.Index].pb);
-                    pictureHolder.Controls.Add(tmp_shoe.pb);
-                    pbList.Add(tmp_shoe.pb);
+                        ClothingTable.Remove((Clothing)ShoeTable[selectedRow.Index]);
+                        ClothingTable.Add((Clothing)tmp_shoe);
 
-                    ClothingTable.Remove((Clothing)ShoeTable[selectedRow.Index]);
-                    ClothingTable.Add((Clothing)tmp_shoe);
-
-                    ShoeTable[selectedRow.Index] = tmp_shoe;
+                        ShoeTable[selectedRow.Index] = tmp_shoe;
+                    }
                 }
               
 
@@ -406,7 +414,7 @@ namespace oopprojectfinal
 
                 return;
             }
-            else
+            else if(e.Button == MouseButtons.Left)
             {
                 mouseLeft = true;
                 foreach (Clothing c in ClothingTable)
@@ -463,10 +471,32 @@ namespace oopprojectfinal
             {
                 if (selectedRow != null)
                 {
-                    if (pictureHolder.Bounds.Contains(MousePosition))
+                    if (userPants != null)
                     {
-                        PictureBox pb = PantsTable[selectedRow.Index].pb;
-                        pb.Location = new Point(MousePosition.X - pictureHolder.Location.X - pb.Size.Width / 2, MousePosition.Y - pictureHolder.Location.Y - pb.Size.Height / 2);
+                        if (pictureHolder.Bounds.Contains(MousePosition))
+                        {
+                            PictureBox pb = PantsTable[selectedRow.Index].pb;
+                            pb.Location = new Point(MousePosition.X - pictureHolder.Location.X - pb.Size.Width / 2, MousePosition.Y - pictureHolder.Location.Y - pb.Size.Height / 2);
+                        }
+
+                    }
+                    else if (userShirt != null)
+                    {
+                        if (pictureHolder.Bounds.Contains(MousePosition))
+                        {
+                            PictureBox pb = ShirtTable[selectedRow.Index].pb;
+                            pb.Location = new Point(MousePosition.X - pictureHolder.Location.X - pb.Size.Width / 2, MousePosition.Y - pictureHolder.Location.Y - pb.Size.Height / 2);
+                        }
+
+                    }
+                    else if (userShoe != null)
+                    {
+                        if (pictureHolder.Bounds.Contains(MousePosition))
+                        {
+                            PictureBox pb = ShoeTable[selectedRow.Index].pb;
+                            pb.Location = new Point(MousePosition.X - pictureHolder.Location.X - pb.Size.Width / 2, MousePosition.Y - pictureHolder.Location.Y - pb.Size.Height / 2);
+                        }
+
                     }
                 }
             }
