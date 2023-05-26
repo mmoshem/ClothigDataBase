@@ -110,10 +110,10 @@ namespace oopprojectfinal.userControls
             string size = (comboBoxPantsSize.SelectedItem)?.ToString();
             string fabric = (comboBoxPantsFabric.SelectedItem)?.ToString();
             //the question mark ?. is a operator that checks if the left side of ?. is null ,if yes it skips the right part and returns null
-            string color = textBoxColor.Text; 
+            string color = (comboBoxColor.SelectedItem)?.ToString(); 
             string brand = textBoxBrand.Text;
 
-            if(type == null || size== null || fabric == null || color=="" || brand=="")
+            if(type == null || size== null || fabric == null || color==null || brand=="")
             {
                 MessageBox.Show("please fill everything", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
@@ -144,7 +144,7 @@ namespace oopprojectfinal.userControls
             comboBoxPantsSize.SelectedItem = null;
             comboBoxPantsFabric.SelectedItem = null;
             textBoxBrand.Text = "";
-            textBoxColor.Text = "";
+            comboBoxColor.SelectedItem = null;
             textBoxPrice.Text = "";
             radioButtonMan.Checked = false;
             radioButtonWoman.Checked = false;
@@ -164,7 +164,7 @@ namespace oopprojectfinal.userControls
             comboBoxPantsType.SelectedItem = type;
             comboBoxPantsSize.SelectedItem = size;
             textBoxBrand.Text = brand;
-            textBoxColor.Text = color;
+            comboBoxColor.SelectedItem = color;
             textBoxPrice.Text = price;
 
             

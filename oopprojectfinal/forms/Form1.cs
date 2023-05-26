@@ -34,7 +34,7 @@ namespace oopprojectfinal
         {
             InitializeComponent();
 
-            Pants tmp = new Pants("Pants", "Man", "tahat", "Nintendo", 123, "Silk", "M", "Cargo pants");
+            Pants tmp = new Pants("Pants", "Man", "khaki", "Nintendo", 123, "Silk", "M", "Cargo pants");
             PantsTable.Add(tmp);
             tmp.pb.MouseDown += pic_MouseDown;
             tmp.pb.MouseMove += pic_MouseMove;
@@ -43,7 +43,7 @@ namespace oopprojectfinal
             pbList.Add(tmp.pb);
             pictureHolder.Controls.Add(tmp.pb);//the "this" is the form
 
-            tmp = new Pants("Pants", "Woman", "tahat", "Nintendo", 321, "Linen", "XL", "Culottes");
+            tmp = new Pants("Pants", "Woman", "black", "Nintendo", 321, "Linen", "XL", "Culottes");
             PantsTable.Add(tmp);
             tmp.pb.MouseDown += pic_MouseDown;
             tmp.pb.MouseMove += pic_MouseMove;

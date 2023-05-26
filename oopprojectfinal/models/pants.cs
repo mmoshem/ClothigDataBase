@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
+﻿using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace oopprojectfinal
@@ -15,28 +10,25 @@ namespace oopprojectfinal
 
         public override void showPic()
         {
-            /*
+
             using (Form form = new Form())
             {
-                string relativePath = @"images/pants/first"; // Provide the correct relative path to the image file
+                PictureBox pbCopy = new PictureBox();
 
-                string imagePath = System.IO.Path.Combine(Application.StartupPath, relativePath);
-                //@"C:\Users\mmosh\Desktop\oopprojectfinal\oopprojectfinal\imeges\pants\365132_308_XL.jpg"
+                pbCopy.Image = (Image)(pb.Image.Clone());
 
+                pbCopy.SizeMode = PictureBoxSizeMode.StretchImage;
+                pbCopy.Size = form.Size;
 
-                PictureBox pb = new PictureBox();
-                pb.Image = Image.FromFile(imagePath);
-                pb.Width = 1000;
-                pb.Height = 1000;
-                form.StartPosition = FormStartPosition.WindowsDefaultBounds;
-                form.Size = pb.Size;
-                
-                form.Controls.Add(pb);
+                form.Controls.Add(pbCopy);
                 form.ShowDialog();
             }
             //throw new NotImplementedException();
-            */
+
         }
+
+ 
+
         public Pants(string item, string gender,  string color, string brand, double price, string fubricType,string clothesSize , string pantsType) : base( item, gender,color, brand, price, fubricType, clothesSize)
         {
             this.pantsType = pantsType;
@@ -44,7 +36,7 @@ namespace oopprojectfinal
             string imagePath = Application.StartupPath;
             imagePath = Directory.GetParent(imagePath).FullName;
             imagePath = Directory.GetParent(imagePath).FullName;
-            imagePath += @"\images\pants\first.jpg";
+            imagePath += @"\pants\"+color+".jpg";
 
 
             pb.Image = Image.FromFile(imagePath);

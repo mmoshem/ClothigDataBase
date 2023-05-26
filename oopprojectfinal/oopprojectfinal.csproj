@@ -114,10 +114,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="imeges\shirt\shirt.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="imeges\pants\" />
+    <Content Include="pants\black_pants_.jpg" />
+    <Content Include="pants\brown_pants.jpg" />
+    <Content Include="pants\first.jpg" />
+    <Content Include="pants\Khaki_pants.jpg" />
+    <Content Include="pants\red_pants.jpg" />
+    <Content Include="shirt\shirt.jpg" />
+    <Content Include="shoes\download.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
