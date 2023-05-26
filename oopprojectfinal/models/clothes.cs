@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace oopprojectfinal
 {
+    [Serializable]
+
     public abstract class Clothes:Clothing
     {
        

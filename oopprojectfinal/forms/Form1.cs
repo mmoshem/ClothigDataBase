@@ -36,6 +36,7 @@ namespace oopprojectfinal
 
             Pants tmp = new Pants("Pants", "Man", "khaki", "Nintendo", 123, "Silk", "M", "Cargo pants");
             PantsTable.Add(tmp);
+            ClothingTable.Add(tmp);
             tmp.pb.MouseDown += pic_MouseDown;
             tmp.pb.MouseMove += pic_MouseMove;
             tmp.pb.MouseUp += pic_MouseUp;
@@ -45,6 +46,7 @@ namespace oopprojectfinal
 
             tmp = new Pants("Pants", "Woman", "black", "Nintendo", 321, "Linen", "XL", "Culottes");
             PantsTable.Add(tmp);
+            ClothingTable.Add(tmp);
             tmp.pb.MouseDown += pic_MouseDown;
             tmp.pb.MouseMove += pic_MouseMove;
             tmp.pb.MouseUp += pic_MouseUp;
@@ -115,35 +117,44 @@ namespace oopprojectfinal
                     tmp_pants.pb.MouseUp += pic_MouseUp;
 
                     pbList.Add(tmp_pants.pb);
-                    pictureHolder.Controls.Add(tmp_pants.pb);//the "this" is the form
+                    pictureHolder.Controls.Add(tmp_pants.pb);
                 }
 
             }
             else if (userShirt != null)
             {
-                Shirt tmp = userShirt.backToTheAdd();
-                if (tmp != null)
+                Shirt tmp_shirt = userShirt.backToTheAdd();
+                if (tmp_shirt != null)
                 {
-                    ShirtTable.Add(tmp);
-                    ClothingTable.Add(tmp);
+                    ShirtTable.Add(tmp_shirt);
+                    ClothingTable.Add(tmp_shirt);
 
 
+                    tmp_shirt.pb.MouseDown += pic_MouseDown;
+                    tmp_shirt.pb.MouseMove += pic_MouseMove;
+                    tmp_shirt.pb.MouseUp += pic_MouseUp;
 
-                    //pb.Image = Image.FromFile(@"C:\Users\mmosh\Desktop\oopprojectfinal\oopprojectfinal\imeges\shirt\shirt.jpg");
-                    //pb.SizeMode = PictureBoxSizeMode.StretchImage;//makes the pic in the size of the image
-                    //pb.Size = new Size(150, 100);//size of the frame 
-                    //pb.Location = new Point(500, 50);
-                    //this.Controls.Add(pb);//the this is the form
+                    pbList.Add(tmp_shirt.pb);
+                    pictureHolder.Controls.Add(tmp_shirt.pb);//the "this" is the form
+
+
+                    
                 }
             }
             else if (userShoe != null)
             {
-                Shoe tmp = userShoe.backToTheAdd();
-                if (tmp != null)
+                Shoe tmp_shoe = userShoe.backToTheAdd();
+                if (tmp_shoe != null)
                 {
-                    ShoeTable.Add(tmp);
-                    ClothingTable.Add(tmp);
+                    ShoeTable.Add(tmp_shoe);
+                    ClothingTable.Add(tmp_shoe);
 
+                    tmp_shoe.pb.MouseDown += pic_MouseDown;
+                    tmp_shoe.pb.MouseMove += pic_MouseMove;
+                    tmp_shoe.pb.MouseUp += pic_MouseUp;
+
+                    pbList.Add(tmp_shoe.pb);
+                    pictureHolder.Controls.Add(tmp_shoe.pb);//the "this" is the form
                 }
                 
             }
@@ -169,8 +180,6 @@ namespace oopprojectfinal
                 if (userPants != null)
                 {
                     Pants tmp = userPants.backToTheAdd();
-                    //we go to the pantsTableLIst ,we know that "selectedRow" has its index of the selected row in the dataGrid. 
-                    //so we go the place of the node of the pantsTableLIst and there is a Pants opject inside . we change it to the tmp which is also Pants object 
                     tmp.pb.MouseDown += pic_MouseDown;
                     tmp.pb.MouseMove += pic_MouseMove;
                     tmp.pb.MouseUp += pic_MouseUp;
@@ -179,24 +188,55 @@ namespace oopprojectfinal
                     pbList.Remove(PantsTable[selectedRow.Index].pb);
                     pictureHolder.Controls.Remove(PantsTable[selectedRow.Index].pb);
                     pictureHolder.Controls.Add(tmp.pb);
+
                     pbList.Add(tmp.pb);
+
+                    ClothingTable.Remove((Clothing)PantsTable[selectedRow.Index]);
+                    ClothingTable.Add((Clothing)tmp);
+
+
                     PantsTable[selectedRow.Index] = tmp;
+
+                    //we go to the pantsTableLIst ,we know that "selectedRow" has its index of the selected row in the dataGrid. 
+                    //so we go the place of the node of the pantsTableLIst and there is a Pants opject inside . we change it to the tmp which is also Pants object 
                 }
                 if (userShirt != null)
                 {
-                    Shirt tmp = userShirt.backToTheAdd();
+                    Shirt tmp_shirt = userShirt.backToTheAdd();
 
-                    //we go to the ShirtTableLIst ,we know that "selectedRow" has its index of the selected row in the dataGrid. 
-                    //so we go the place of the node of the ShirtTableLIst and there is a Shirt opject inside . we change it to the tmp which is also Shirt object 
-                    ShirtTable[selectedRow.Index] = tmp;
+                    tmp_shirt.pb.MouseDown += pic_MouseDown;
+                    tmp_shirt.pb.MouseMove += pic_MouseMove;
+                    tmp_shirt.pb.MouseUp += pic_MouseUp;
+                    tmp_shirt.pb.Location = ShirtTable[selectedRow.Index].pb.Location;
+
+                    pbList.Remove(ShirtTable[selectedRow.Index].pb);
+                    pictureHolder.Controls.Remove(ShirtTable[selectedRow.Index].pb);
+                    pictureHolder.Controls.Add(tmp_shirt.pb);
+                    pbList.Add(tmp_shirt.pb);
+
+                    ClothingTable.Remove((Clothing)ShirtTable[selectedRow.Index]);
+                    ClothingTable.Add((Clothing)tmp_shirt);
+
+                    ShirtTable[selectedRow.Index] = tmp_shirt;
                 }
                 if (userShoe != null)
                 {
-                    Shoe tmp = userShoe.backToTheAdd();
+                    Shoe tmp_shoe = userShoe.backToTheAdd();
 
-                    //we go to the ShoeTableLIst ,we know that "selectedRow" has its index of the selected row in the dataGrid. 
-                    //so we go the place of the node of the ShoeTableLIst and there is a Shoe opject inside . we change it to the tmp which is also Shoe object 
-                    ShoeTable[selectedRow.Index] = tmp;
+                    tmp_shoe.pb.MouseDown += pic_MouseDown;
+                    tmp_shoe.pb.MouseMove += pic_MouseMove;
+                    tmp_shoe.pb.MouseUp += pic_MouseUp;
+                    tmp_shoe.pb.Location = ShoeTable[selectedRow.Index].pb.Location;
+
+                    pbList.Remove(ShoeTable[selectedRow.Index].pb);
+                    pictureHolder.Controls.Remove(ShoeTable[selectedRow.Index].pb);
+                    pictureHolder.Controls.Add(tmp_shoe.pb);
+                    pbList.Add(tmp_shoe.pb);
+
+                    ClothingTable.Remove((Clothing)ShoeTable[selectedRow.Index]);
+                    ClothingTable.Add((Clothing)tmp_shoe);
+
+                    ShoeTable[selectedRow.Index] = tmp_shoe;
                 }
               
 
@@ -242,38 +282,126 @@ namespace oopprojectfinal
 
 
 
+        //private void pic_MouseDown(object sender, MouseEventArgs e)
+        //{
+        //    if (e.Button == MouseButtons.Right)
+        //    {
+
+        //        PictureBox clickedPictureBox = (PictureBox)sender;
+        //        Pants tmPants = null;
+        //        // Find the selected index based on the clicked PictureBox
+
+
+        //        for (int i = 0; i < PantsTable.Count; i++)
+        //        {
+        //            if (PantsTable[i].pb == clickedPictureBox)
+        //            {
+        //                tmPants = PantsTable[i];
+        //                break;
+        //            }
+        //        }
+
+        //        if (tmPants != null)
+        //        {
+        //            // Remove the corresponding row from the DataGridView
+
+
+        //            PantsTable.Remove(tmPants);
+        //            dataGrid.DataSource = null;
+        //            dataGrid.DataSource = PantsTable;
+
+
+        //            // Remove the clicked PictureBox from the pictureHolder.Controls
+        //            pictureHolder.Controls.Remove(clickedPictureBox);
+        //            pbList.Remove(clickedPictureBox);
+        //        }
+
+        //        return;
+        //    }
+        //    else
+        //    {
+        //        mouseLeft = true;
+        //        foreach (Pants p in PantsTable)
+        //        {
+        //            if (p.pb == sender)
+        //            {
+        //                comboBoxItem.SelectedIndex = 2;
+        //                //dataGrid.DataSource = PantsTable;
+        //                dataGrid.ClearSelection();
+        //                selectedRow = dataGrid.Rows[PantsTable.IndexOf(p)];
+        //                selectedRow.Selected = true;
+
+        //                fill_info();
+        //            }
+        //        }
+        //        // Do something for left or middle click
+        //    }
+
+        //    //isMouseClicked = true;
+        //}
+
         private void pic_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
             {
 
                 PictureBox clickedPictureBox = (PictureBox)sender;
-                Pants tmPants = null;
+                Clothing tmpClothing = null;
                 // Find the selected index based on the clicked PictureBox
 
-
-                for (int i = 0; i < PantsTable.Count; i++)
+                foreach( Clothing i in ClothingTable)
                 {
-                    if (PantsTable[i].pb == clickedPictureBox)
+                    if(i.pb == clickedPictureBox)
                     {
-                        tmPants = PantsTable[i];
+                        tmpClothing = i;
                         break;
                     }
                 }
 
-                if (tmPants != null)
+                if (tmpClothing != null)
                 {
-                    // Remove the corresponding row from the DataGridView
-                    
-                    
-                    PantsTable.Remove(tmPants);
-                    dataGrid.DataSource = null;
-                    dataGrid.DataSource = PantsTable;
-                    
+                    if (tmpClothing.item == "Pants")
+                    {
+                        // Remove the corresponding row from the DataGridView
 
-                    // Remove the clicked PictureBox from the pictureHolder.Controls
-                    pictureHolder.Controls.Remove(clickedPictureBox);
-                    pbList.Remove(clickedPictureBox);
+                        PantsTable.Remove((Pants)tmpClothing);
+                        dataGrid.DataSource = null;
+                        dataGrid.DataSource = PantsTable;
+
+
+                        // Remove the clicked PictureBox from the pictureHolder.Controls
+                        pictureHolder.Controls.Remove(clickedPictureBox);
+                        pbList.Remove(clickedPictureBox);
+                        ClothingTable.Remove(tmpClothing);
+                    }
+                    if (tmpClothing.item == "Shirt")
+                    {
+                        // Remove the corresponding row from the DataGridView
+
+                        ShirtTable.Remove((Shirt)tmpClothing);
+                        dataGrid.DataSource = null;
+                        dataGrid.DataSource = ShirtTable;
+
+
+                        // Remove the clicked PictureBox from the pictureHolder.Controls
+                        pictureHolder.Controls.Remove(clickedPictureBox);
+                        pbList.Remove(clickedPictureBox);
+                        ClothingTable.Remove(tmpClothing);
+                    }
+                    if (tmpClothing.item == "Shoe")
+                    {
+                        // Remove the corresponding row from the DataGridView
+
+                        ShoeTable.Remove((Shoe)tmpClothing);
+                        dataGrid.DataSource = null;
+                        dataGrid.DataSource = ShoeTable;
+
+
+                        // Remove the clicked PictureBox from the pictureHolder.Controls
+                        pictureHolder.Controls.Remove(clickedPictureBox);
+                        pbList.Remove(clickedPictureBox);
+                        ClothingTable.Remove(tmpClothing);
+                    }
                 }
 
                 return;
@@ -281,17 +409,37 @@ namespace oopprojectfinal
             else
             {
                 mouseLeft = true;
-                foreach (Pants p in PantsTable)
+                foreach (Clothing c in ClothingTable)
                 {
-                    if (p.pb == sender)
+                    if (c.pb == sender)
                     {
-                        comboBoxItem.SelectedIndex = 2;
-                        //dataGrid.DataSource = PantsTable;
-                        dataGrid.ClearSelection();
-                        selectedRow = dataGrid.Rows[PantsTable.IndexOf(p)];
-                        selectedRow.Selected = true;
+                        if(c.item == "Pants")
+                        { 
+                            comboBoxItem.SelectedIndex = 2;
+                            dataGrid.ClearSelection();
+                            selectedRow = dataGrid.Rows[PantsTable.IndexOf((Pants)c)];
+                            selectedRow.Selected = true;
 
-                        fill_info();
+                            fill_info();
+                        }
+                        else if (c.item == "Shirt")
+                        {
+                            comboBoxItem.SelectedIndex = 1;
+                            dataGrid.ClearSelection();
+                            selectedRow = dataGrid.Rows[ShirtTable.IndexOf((Shirt)c)];
+                            selectedRow.Selected = true;
+
+                            fill_info();
+                        }
+                        else if (c.item == "Shoe")
+                        {
+                            comboBoxItem.SelectedIndex = 0;
+                            dataGrid.ClearSelection();
+                            selectedRow = dataGrid.Rows[ShoeTable.IndexOf((Shoe)c)];
+                            selectedRow.Selected = true;
+
+                            fill_info();
+                        }
                     }
                 }
                 // Do something for left or middle click
@@ -299,24 +447,6 @@ namespace oopprojectfinal
 
             //isMouseClicked = true;
         }
-
-        //private void pic_MouseDown(object sender, MouseEventArgs e)
-        //{
-        //    isMouseClicked = true;
-
-        //    foreach (Pants p in PantsTable)
-        //    {
-        //        if (p.pb == sender)
-        //        {
-        //            dataGrid.ClearSelection();
-        //            dataGrid.DataSource = PantsTable;
-        //            selectedRow = dataGrid.Rows[PantsTable.IndexOf(p)];
-        //            selectedRow.Selected = true;
-
-        //            fill_info();
-        //        }
-        //    }
-        //}
 
         private void pic_MouseUp(object sender, MouseEventArgs e)
         {
