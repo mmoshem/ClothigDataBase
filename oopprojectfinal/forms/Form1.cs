@@ -27,6 +27,9 @@ namespace oopprojectfinal
         List<PictureBox> pbLsit = new List<PictureBox>();
 
         bool isMouseClicked = false;
+        bool mouseLeft = false;
+        bool mouseRight = false;
+
         public Form1()
         {
             InitializeComponent();
@@ -224,30 +227,91 @@ namespace oopprojectfinal
 
         private void pic_MouseDown(object sender, MouseEventArgs e)
         {
-            isMouseClicked = true;
-
-            foreach (Pants p in PantsTable)
+            if (e.Button == MouseButtons.Right)
             {
-                if (p.pb == sender)
-                {
-                    dataGrid.ClearSelection();
-                    dataGrid.DataSource = PantsTable;
-                    selectedRow = dataGrid.Rows[PantsTable.IndexOf(p)];
-                    selectedRow.Selected = true;
 
-                    fill_info();
+                PictureBox clickedPictureBox = (PictureBox)sender;
+                int selectedIndex = -1;
+
+                // Find the selected index based on the clicked PictureBox
+
+
+                for (int i = 0; i < pbLsit.Count; i++)
+                {
+                    if (pbLsit[i] == clickedPictureBox)
+                    {
+                        selectedIndex = i;
+                        break;
+                    }
                 }
+
+                if (selectedIndex >= 0 && selectedIndex < pbLsit.Count)
+                {
+                    // Remove the corresponding row from the DataGridView
+                    if (selectedIndex < PantsTable.Count)
+                    {
+                        PantsTable.RemoveAt(selectedIndex);
+                        dataGrid.DataSource = null;
+                        dataGrid.DataSource = PantsTable;
+                    }
+
+                    // Remove the clicked PictureBox from the pictureHolder.Controls
+                    pictureHolder.Controls.Remove(clickedPictureBox);
+                    pbLsit.Remove(clickedPictureBox);
+                }
+
+                return;
             }
+            else
+            {
+                mouseLeft = true;
+                foreach (Pants p in PantsTable)
+                {
+                    if (p.pb == sender)
+                    {
+                        dataGrid.ClearSelection();
+                        dataGrid.DataSource = PantsTable;
+                        selectedRow = dataGrid.Rows[PantsTable.IndexOf(p)];
+                        selectedRow.Selected = true;
+
+                        fill_info();
+                    }
+                }
+                // Do something for left or middle click
+            }
+
+            //isMouseClicked = true;
         }
+
+        //private void pic_MouseDown(object sender, MouseEventArgs e)
+        //{
+        //    isMouseClicked = true;
+
+        //    foreach (Pants p in PantsTable)
+        //    {
+        //        if (p.pb == sender)
+        //        {
+        //            dataGrid.ClearSelection();
+        //            dataGrid.DataSource = PantsTable;
+        //            selectedRow = dataGrid.Rows[PantsTable.IndexOf(p)];
+        //            selectedRow.Selected = true;
+
+        //            fill_info();
+        //        }
+        //    }
+        //}
 
         private void pic_MouseUp(object sender, MouseEventArgs e)
         {
             isMouseClicked = false;
+            mouseLeft = false;
+            
+            
         }
 
         private void pic_MouseMove(object sender, MouseEventArgs e)
         {
-            if (isMouseClicked)
+            if (/*isMouseClicked*/mouseLeft)
             {
                 if (selectedRow != null)
                 {
