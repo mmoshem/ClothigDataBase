@@ -286,6 +286,24 @@ namespace oopprojectfinal
 
                 }
             }
+            if (userShirt != null)
+            {
+                if (selectedRow != null)
+                {
+                    Shirt obj = ShirtTable[selectedRow.Index];
+                    obj.showPic();
+
+                }
+            }
+            if (userShoe != null)
+            {
+                if (selectedRow != null)
+                {
+                    Shoe obj = ShoeTable[selectedRow.Index];
+                    obj.showPic();
+
+                }
+            }
         }
 
 
