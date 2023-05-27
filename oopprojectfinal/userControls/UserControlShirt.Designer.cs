@@ -52,7 +52,7 @@
             this.label5.Location = new System.Drawing.Point(104, 304);
             this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(37, 20);
+            this.label5.Size = new System.Drawing.Size(73, 37);
             this.label5.TabIndex = 43;
             this.label5.Text = "size";
             // 
@@ -67,7 +67,7 @@
             "XL",
             "XXL"});
             this.comboBoxShirtSize.Location = new System.Drawing.Point(258, 308);
-            this.comboBoxShirtSize.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.comboBoxShirtSize.Margin = new System.Windows.Forms.Padding(6);
             this.comboBoxShirtSize.Name = "comboBoxShirtSize";
             this.comboBoxShirtSize.Size = new System.Drawing.Size(238, 33);
             this.comboBoxShirtSize.TabIndex = 42;
@@ -79,14 +79,14 @@
             this.label1.Location = new System.Drawing.Point(104, 387);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 20);
+            this.label1.Size = new System.Drawing.Size(94, 37);
             this.label1.TabIndex = 33;
             this.label1.Text = "Color";
             // 
             // textBoxPrice
             // 
             this.textBoxPrice.Location = new System.Drawing.Point(258, 538);
-            this.textBoxPrice.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.textBoxPrice.Margin = new System.Windows.Forms.Padding(6);
             this.textBoxPrice.Name = "textBoxPrice";
             this.textBoxPrice.Size = new System.Drawing.Size(196, 31);
             this.textBoxPrice.TabIndex = 38;
@@ -98,14 +98,14 @@
             this.label2.Location = new System.Drawing.Point(104, 467);
             this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 20);
+            this.label2.Size = new System.Drawing.Size(103, 37);
             this.label2.TabIndex = 34;
             this.label2.Text = "Brand";
             // 
             // textBoxBrand
             // 
             this.textBoxBrand.Location = new System.Drawing.Point(258, 467);
-            this.textBoxBrand.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.textBoxBrand.Margin = new System.Windows.Forms.Padding(6);
             this.textBoxBrand.Name = "textBoxBrand";
             this.textBoxBrand.Size = new System.Drawing.Size(196, 31);
             this.textBoxBrand.TabIndex = 37;
@@ -117,7 +117,7 @@
             this.label4.Location = new System.Drawing.Point(104, 537);
             this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 20);
+            this.label4.Size = new System.Drawing.Size(89, 37);
             this.label4.TabIndex = 36;
             this.label4.Text = "Price";
             // 
@@ -125,9 +125,9 @@
             // 
             this.radioButtonUnisex.AutoSize = true;
             this.radioButtonUnisex.Location = new System.Drawing.Point(394, 83);
-            this.radioButtonUnisex.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.radioButtonUnisex.Margin = new System.Windows.Forms.Padding(6);
             this.radioButtonUnisex.Name = "radioButtonUnisex";
-            this.radioButtonUnisex.Size = new System.Drawing.Size(96, 29);
+            this.radioButtonUnisex.Size = new System.Drawing.Size(109, 29);
             this.radioButtonUnisex.TabIndex = 62;
             this.radioButtonUnisex.TabStop = true;
             this.radioButtonUnisex.Text = "Unisex";
@@ -138,9 +138,9 @@
             // 
             this.radioButtonWoman.AutoSize = true;
             this.radioButtonWoman.Location = new System.Drawing.Point(244, 83);
-            this.radioButtonWoman.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.radioButtonWoman.Margin = new System.Windows.Forms.Padding(6);
             this.radioButtonWoman.Name = "radioButtonWoman";
-            this.radioButtonWoman.Size = new System.Drawing.Size(103, 29);
+            this.radioButtonWoman.Size = new System.Drawing.Size(116, 29);
             this.radioButtonWoman.TabIndex = 61;
             this.radioButtonWoman.TabStop = true;
             this.radioButtonWoman.Text = "Woman";
@@ -151,9 +151,9 @@
             // 
             this.radioButtonMan.AutoSize = true;
             this.radioButtonMan.Location = new System.Drawing.Point(98, 83);
-            this.radioButtonMan.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.radioButtonMan.Margin = new System.Windows.Forms.Padding(6);
             this.radioButtonMan.Name = "radioButtonMan";
-            this.radioButtonMan.Size = new System.Drawing.Size(72, 29);
+            this.radioButtonMan.Size = new System.Drawing.Size(85, 29);
             this.radioButtonMan.TabIndex = 60;
             this.radioButtonMan.TabStop = true;
             this.radioButtonMan.Text = "Man";
@@ -175,7 +175,7 @@
             "Nylon",
             "Viscose"});
             this.comboBoxFabric.Location = new System.Drawing.Point(254, 179);
-            this.comboBoxFabric.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxFabric.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxFabric.Name = "comboBoxFabric";
             this.comboBoxFabric.Size = new System.Drawing.Size(242, 33);
             this.comboBoxFabric.TabIndex = 66;
@@ -187,7 +187,7 @@
             this.labelFabric.Location = new System.Drawing.Point(104, 175);
             this.labelFabric.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelFabric.Name = "labelFabric";
-            this.labelFabric.Size = new System.Drawing.Size(53, 20);
+            this.labelFabric.Size = new System.Drawing.Size(107, 37);
             this.labelFabric.TabIndex = 65;
             this.labelFabric.Text = "Fabric";
             // 
@@ -198,7 +198,7 @@
             this.label3.Location = new System.Drawing.Point(104, 238);
             this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 20);
+            this.label3.Size = new System.Drawing.Size(87, 37);
             this.label3.TabIndex = 68;
             this.label3.Text = "Type";
             // 
@@ -206,7 +206,7 @@
             // 
             this.comboBoxShirtType.FormattingEnabled = true;
             this.comboBoxShirtType.Location = new System.Drawing.Point(258, 242);
-            this.comboBoxShirtType.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.comboBoxShirtType.Margin = new System.Windows.Forms.Padding(6);
             this.comboBoxShirtType.Name = "comboBoxShirtType";
             this.comboBoxShirtType.Size = new System.Drawing.Size(242, 33);
             this.comboBoxShirtType.TabIndex = 67;
@@ -215,7 +215,10 @@
             // 
             this.comboBoxColor.FormattingEnabled = true;
             this.comboBoxColor.Items.AddRange(new object[] {
-            "brown"});
+            "brown",
+            "black",
+            "purple",
+            "red"});
             this.comboBoxColor.Location = new System.Drawing.Point(258, 387);
             this.comboBoxColor.Margin = new System.Windows.Forms.Padding(6);
             this.comboBoxColor.Name = "comboBoxColor";
@@ -241,7 +244,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxBrand);
             this.Controls.Add(this.label4);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "UserControlShirt";
             this.Size = new System.Drawing.Size(606, 623);
             this.ResumeLayout(false);

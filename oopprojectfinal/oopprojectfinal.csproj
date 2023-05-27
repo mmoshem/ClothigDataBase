@@ -118,7 +118,10 @@
     <Content Include="pants\brown.jpg" />
     <Content Include="pants\Khaki.jpg" />
     <Content Include="pants\red.jpg" />
+    <Content Include="shirt\black.jpg" />
     <Content Include="shirt\brown.jpg" />
+    <Content Include="shirt\purple.jpg" />
+    <Content Include="shirt\red.jpg" />
     <Content Include="shoes\blue.jpg" />
     <Content Include="shoes\green.jpg" />
     <Content Include="shoes\orange.jpg" />
