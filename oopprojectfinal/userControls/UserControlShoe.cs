@@ -124,7 +124,7 @@ namespace oopprojectfinal
             comboBoxShoeType.SelectedItem = null;
             comboBoxShoeSize.SelectedItem = null;
             textBoxBrand.Text = "";
-            comboBoxShoeSize.SelectedItem= null;
+            comboBoxColor.SelectedItem= null;
             textBoxPrice.Text = "";
             radioButtonMan.Checked = false;
             radioButtonWoman.Checked = false;
@@ -144,7 +144,7 @@ namespace oopprojectfinal
             comboBoxShoeType.SelectedItem = type;
             comboBoxShoeSize.SelectedItem = size;
             textBoxBrand.Text = brand;
-            comboBoxShoeSize.SelectedItem = size;
+            comboBoxColor.SelectedItem = color;
             textBoxPrice.Text = price;
         }
     }

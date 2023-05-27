@@ -168,14 +168,10 @@ namespace oopprojectfinal
 
 
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void update_button_Click(object sender, EventArgs e)
         {
-            if (selectedRow != null)
+            if (selectedRow != null&&selectedRow.Index != -1)
             {
                 if (userPants != null)
                 {
@@ -247,6 +243,11 @@ namespace oopprojectfinal
                     }
                 }
               
+
+            }
+            else
+            {
+                MessageBox.Show("To update you must have at least one selected item", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
         }
