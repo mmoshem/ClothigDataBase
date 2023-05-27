@@ -90,11 +90,12 @@ namespace oopprojectfinal
                 return null;
             }
             type = comboBoxShoeType.SelectedItem?.ToString();
-            
-            color = textBoxColor.Text;//if empty it insert to    color = ""
-            brand = textBoxBrand.Text;
 
-            if (color == "" || brand == "" || type == null)
+            color = comboBoxColor.SelectedItem?.ToString();//if empty it insert to    color = ""
+            brand = textBoxBrand.Text;
+           
+
+            if (color == null || brand == "" || type == null)
             {
                 MessageBox.Show("please fill everything", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
@@ -123,7 +124,7 @@ namespace oopprojectfinal
             comboBoxShoeType.SelectedItem = null;
             comboBoxShoeSize.SelectedItem = null;
             textBoxBrand.Text = "";
-            textBoxColor.Text = "";
+            comboBoxShoeSize.SelectedItem= null;
             textBoxPrice.Text = "";
             radioButtonMan.Checked = false;
             radioButtonWoman.Checked = false;
@@ -143,7 +144,7 @@ namespace oopprojectfinal
             comboBoxShoeType.SelectedItem = type;
             comboBoxShoeSize.SelectedItem = size;
             textBoxBrand.Text = brand;
-            textBoxColor.Text = color;
+            comboBoxShoeSize.SelectedItem = size;
             textBoxPrice.Text = price;
         }
     }

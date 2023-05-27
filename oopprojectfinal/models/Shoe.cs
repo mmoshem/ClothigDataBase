@@ -23,7 +23,7 @@ namespace oopprojectfinal
             string imagePath = Application.StartupPath;
             imagePath = Directory.GetParent(imagePath).FullName;
             imagePath = Directory.GetParent(imagePath).FullName;
-            imagePath += @"\shoe\" + color + ".jpg";
+            imagePath += @"\shoes\" + color + ".jpg";
 
 
             pb.Image = Image.FromFile(imagePath);
