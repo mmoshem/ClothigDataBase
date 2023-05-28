@@ -39,25 +39,6 @@ namespace oopprojectfinal
         {
             InitializeComponent();
 
-            Shirt tmp = new Shirt("Shirt", "Unisex", "brown", "Nintendo", 123, "Silk", "M", "Dress Shirt");
-            ShirtTable.Add(tmp);
-            ClothingTable.Add(tmp);
-            tmp.pb.MouseDown += pic_MouseDown;
-            tmp.pb.MouseMove += pic_MouseMove;
-            tmp.pb.MouseUp += pic_MouseUp;
-            tmp.pb.Location = new Point(0, 0);
-            pbList.Add(tmp.pb);
-            pictureHolder.Controls.Add(tmp.pb);//the "this" is the form
-
-            Pants tmp2 = new Pants("Pants", "Woman", "black", "Nintendo", 321, "Linen", "XL", "Culottes");
-            PantsTable.Add(tmp2);
-            ClothingTable.Add(tmp2);
-            tmp2.pb.MouseDown += pic_MouseDown;
-            tmp2.pb.MouseMove += pic_MouseMove;
-            tmp2.pb.MouseUp += pic_MouseUp;
-            tmp2.pb.Location = new Point(0, 0);
-            pbList.Add(tmp2.pb);
-            pictureHolder.Controls.Add(tmp2.pb);//the "this" is the form
         }
 
 
