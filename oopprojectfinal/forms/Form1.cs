@@ -479,46 +479,49 @@ namespace oopprojectfinal
 
         void fill_info()
         {
-            if (userPants != null)
+            if (selectedRow != null)
             {
+                if (userPants != null)
+                {
 
-                // Retrieve the values from specific cells in the row
+                    // Retrieve the values from specific cells in the row
 
-                string gender = selectedRow.Cells["Gender"].Value.ToString();
-                string type = selectedRow.Cells["pantsType"].Value.ToString();
-                string size = selectedRow.Cells["clothesSize"].Value.ToString();
-                string fabric = selectedRow.Cells["fabricType"].Value.ToString();
-                string color = selectedRow.Cells["color"].Value.ToString();
-                string brand = selectedRow.Cells["brand"].Value.ToString();
-                //double price = Convert.ToDouble(selectedRow.Cells["Price"].Value);
-                string price = selectedRow.Cells["price"].Value.ToString();
-                userPants.updatePannel(fabric, type, gender, brand, color, price, size);
-            }
-            if (userShirt != null)
-            {
-                // Retrieve the values from specific cells in the row
+                    string gender = selectedRow.Cells["Gender"].Value.ToString();
+                    string type = selectedRow.Cells["pantsType"].Value.ToString();
+                    string size = selectedRow.Cells["clothesSize"].Value.ToString();
+                    string fabric = selectedRow.Cells["fabricType"].Value.ToString();
+                    string color = selectedRow.Cells["color"].Value.ToString();
+                    string brand = selectedRow.Cells["brand"].Value.ToString();
+                    //double price = Convert.ToDouble(selectedRow.Cells["Price"].Value);
+                    string price = selectedRow.Cells["price"].Value.ToString();
+                    userPants.updatePannel(fabric, type, gender, brand, color, price, size);
+                }
+                if (userShirt != null)
+                {
+                    // Retrieve the values from specific cells in the row
 
-                string gender = selectedRow.Cells["Gender"].Value.ToString();
-                string type = selectedRow.Cells["type"].Value.ToString();
-                string size = selectedRow.Cells["clothesSize"].Value.ToString();
-                string fabric = selectedRow.Cells["fabricType"].Value.ToString();
-                string color = selectedRow.Cells["color"].Value.ToString();
-                string brand = selectedRow.Cells["brand"].Value.ToString();
-                //double price = Convert.ToDouble(selectedRow.Cells["Price"].Value);
-                string price = selectedRow.Cells["price"].Value.ToString();
-                userShirt.updatePannel(fabric, type, gender, brand, color, price, size);
-            }
-            if (userShoe != null)
-            {
+                    string gender = selectedRow.Cells["Gender"].Value.ToString();
+                    string type = selectedRow.Cells["type"].Value.ToString();
+                    string size = selectedRow.Cells["clothesSize"].Value.ToString();
+                    string fabric = selectedRow.Cells["fabricType"].Value.ToString();
+                    string color = selectedRow.Cells["color"].Value.ToString();
+                    string brand = selectedRow.Cells["brand"].Value.ToString();
+                    //double price = Convert.ToDouble(selectedRow.Cells["Price"].Value);
+                    string price = selectedRow.Cells["price"].Value.ToString();
+                    userShirt.updatePannel(fabric, type, gender, brand, color, price, size);
+                }
+                if (userShoe != null)
+                {
 
-                string gender = selectedRow.Cells["Gender"].Value.ToString();
-                string type = selectedRow.Cells["type"].Value.ToString();
-                string size = selectedRow.Cells["shoeSize"].Value.ToString();
-                string color = selectedRow.Cells["color"].Value.ToString();
-                string brand = selectedRow.Cells["brand"].Value.ToString();
-                //double price = Convert.ToDouble(selectedRow.Cells["Price"].Value);
-                string price = selectedRow.Cells["price"].Value.ToString();
-                userShoe.updatePannel(type, gender, brand, color, price, size);
+                    string gender = selectedRow.Cells["Gender"].Value.ToString();
+                    string type = selectedRow.Cells["type"].Value.ToString();
+                    string size = selectedRow.Cells["shoeSize"].Value.ToString();
+                    string color = selectedRow.Cells["color"].Value.ToString();
+                    string brand = selectedRow.Cells["brand"].Value.ToString();
+                    //double price = Convert.ToDouble(selectedRow.Cells["Price"].Value);
+                    string price = selectedRow.Cells["price"].Value.ToString();
+                    userShoe.updatePannel(type, gender, brand, color, price, size);
+                }
             }
 
         }
@@ -575,24 +578,35 @@ namespace oopprojectfinal
                     pictureHolder.Controls.Add(c.pb);
                 }
 
-             
+
                 comboBoxItem.SelectedIndex = loaded.selectedComboBoxItem;
 
-                if (dataGrid.RowCount != 0)
-                {
-                    selectedRow = dataGrid.Rows[loaded.selectedRow];
-                    fill_info();
 
-                }
-                else
-                    selectedRow = null;
-                if(comboBoxItem.SelectedIndex == 1)
+                /*
+                switch (loaded.selectedComboBoxItem)
                 {
-                    dataGrid.ClearSelection();
+                    case 0: //shoes
+                        comboBoxItem.Refresh();
+                        comboBoxItem.SelectedIndex = 0;
+                        dataGrid.DataSource = ShoeTable;
+                        fill_info();
+                        break;
+                    case 1: //shirt
+                        comboBoxItem.Refresh();
+                        comboBoxItem.SelectedIndex = 1;
+                        dataGrid.DataSource = ShirtTable;
+                        fill_info();
 
-                    dataGrid.DataSource = ShirtTable;
-                    selectedRow.Selected = true;
+                        break;
+                    case 2: //pants
+                        comboBoxItem.Refresh();
+                        comboBoxItem.SelectedIndex = 2;
+                        dataGrid.DataSource = PantsTable;
+                        fill_info();
+
+                        break;
                 }
+                */
 
 
                 stream.Close();
