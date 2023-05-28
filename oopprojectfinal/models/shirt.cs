@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace oopprojectfinal
 {
-
+    [Serializable]
     public class Shirt : Clothes
     {
        public string type { get; set; }
@@ -17,6 +17,8 @@ namespace oopprojectfinal
 
         public override void loadPic()
         {
+            pb = new PictureBox();
+
             string imagePath = Application.StartupPath;
             imagePath = Directory.GetParent(imagePath).FullName;
             imagePath = Directory.GetParent(imagePath).FullName;

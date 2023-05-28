@@ -20,6 +20,8 @@ namespace oopprojectfinal
 
         public override void loadPic()
         {
+            pb = new PictureBox();
+
             string imagePath = Application.StartupPath;
             imagePath = Directory.GetParent(imagePath).FullName;
             imagePath = Directory.GetParent(imagePath).FullName;

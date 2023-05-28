@@ -156,13 +156,14 @@
             // 
             // loadButton
             // 
-            this.loadButton.Location = new System.Drawing.Point(1757, 56);
+            this.loadButton.Location = new System.Drawing.Point(1752, 65);
             this.loadButton.Margin = new System.Windows.Forms.Padding(6);
             this.loadButton.Name = "loadButton";
-            this.loadButton.Size = new System.Drawing.Size(164, 84);
+            this.loadButton.Size = new System.Drawing.Size(131, 67);
             this.loadButton.TabIndex = 21;
             this.loadButton.Text = "Load";
             this.loadButton.UseVisualStyleBackColor = true;
+            this.loadButton.Click += new System.EventHandler(this.loadButton_Click);
             // 
             // Form1
             // 
@@ -182,7 +183,7 @@
             this.Controls.Add(this.dataGrid);
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "s";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureHolder)).EndInit();

@@ -70,6 +70,7 @@ namespace oopprojectfinal
             userShirt = null;
             userPants = null;
 
+
             if (comboBoxItem.SelectedItem.ToString() == "Shoe")
             {
 
@@ -388,30 +389,39 @@ namespace oopprojectfinal
                     {
                         if (c.item == "Pants")
                         {
-                            comboBoxItem.SelectedIndex = 2;
                             dataGrid.ClearSelection();
-                            selectedRow = dataGrid.Rows[PantsTable.IndexOf((Pants)c)];
-                            selectedRow.Selected = true;
-
-                            fill_info();
+                            comboBoxItem.SelectedIndex = 2;
+                            if (dataGrid.RowCount != 0)
+                            {
+                                selectedRow = dataGrid.Rows[PantsTable.IndexOf((Pants)c)];
+                                selectedRow.Selected = true;
+                                fill_info();
+                            }
                         }
                         else if (c.item == "Shirt")
                         {
-                            comboBoxItem.SelectedIndex = 1;
                             dataGrid.ClearSelection();
-                            selectedRow = dataGrid.Rows[ShirtTable.IndexOf((Shirt)c)];
-                            selectedRow.Selected = true;
+                            comboBoxItem.SelectedIndex = 1;
 
-                            fill_info();
+                            if (dataGrid.RowCount != 0)
+                            {
+                                selectedRow = dataGrid.Rows[ShirtTable.IndexOf((Shirt)c)];
+                                selectedRow.Selected = true;
+                                fill_info();
+                            }
                         }
                         else if (c.item == "Shoe")
                         {
-                            comboBoxItem.SelectedIndex = 0;
                             dataGrid.ClearSelection();
-                            selectedRow = dataGrid.Rows[ShoeTable.IndexOf((Shoe)c)];
-                            selectedRow.Selected = true;
+                            comboBoxItem.SelectedIndex = 0;
 
-                            fill_info();
+                            if (dataGrid.RowCount != 0)
+                            {
+                                selectedRow = dataGrid.Rows[ShoeTable.IndexOf((Shoe)c)];
+                                selectedRow.Selected = true;
+
+                                fill_info();
+                            }
                         }
                     }
                 }
@@ -515,14 +525,80 @@ namespace oopprojectfinal
 
         private void saveButton_Click(object sender, EventArgs e)
         {
+            int selectedComboItem = -1;
+            int selectedRowIndex = -1;
+
+            if (selectedRow != null)
+                selectedRowIndex = selectedRow.Index;
+
+            if (userPants != null)
+                selectedComboItem = 2;
+            if (userShirt != null)
+                selectedComboItem = 1;
+            if (userShoe != null)
+                selectedComboItem = 0;
+
             IFormatter formatter = new BinaryFormatter();
-            using (Stream stream = new FileStream("pants.oop", FileMode.Create, FileAccess.Write, FileShare.None))
+            using (Stream stream = new FileStream("store.oop", FileMode.Create, FileAccess.Write, FileShare.None))
             {
-                saver<Pants> saved = new saver<Pants> (PantsTable);
+                saver saved = new saver(PantsTable,ShirtTable,ShoeTable,selectedComboItem,selectedRowIndex);
                 formatter.Serialize(stream, saved);
             }
 
             //////////////////////
+
+        }
+
+        private void loadButton_Click(object sender, EventArgs e)
+        {
+            dataGrid.DataSource = null;
+            pictureHolder.Controls.Clear();
+            ClothingTable = new BindingList<Clothing>();
+
+            if (File.Exists("store.oop"))
+            {
+                Stream stream = File.Open("store.oop", FileMode.Open);
+                var binaryFormatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+                saver loaded = (saver)(binaryFormatter.Deserialize(stream));
+
+
+                PantsTable = loaded.toBindingListPants();
+                ShirtTable = loaded.toBindingListShirts();
+                ShoeTable = loaded.toBindingListShoes();
+                ClothingTable = loaded.toBindingListClothing();
+
+                foreach (Clothing c in ClothingTable)
+                {
+                    c.pb.MouseDown += pic_MouseDown;
+                    c.pb.MouseMove += pic_MouseMove;
+                    c.pb.MouseUp += pic_MouseUp;
+                    pictureHolder.Controls.Add(c.pb);
+                }
+
+             
+                comboBoxItem.SelectedIndex = loaded.selectedComboBoxItem;
+
+                if (dataGrid.RowCount != 0)
+                {
+                    selectedRow = dataGrid.Rows[loaded.selectedRow];
+                    fill_info();
+
+                }
+                else
+                    selectedRow = null;
+                if(comboBoxItem.SelectedIndex == 1)
+                {
+                    dataGrid.ClearSelection();
+
+                    dataGrid.DataSource = ShirtTable;
+                    selectedRow.Selected = true;
+                }
+
+
+                stream.Close();
+            }
+            else
+                MessageBox.Show("store file not found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         }
     }

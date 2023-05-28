@@ -14,6 +14,8 @@ namespace oopprojectfinal
 
         public override void loadPic()
         {
+            pb = new PictureBox();
+
             string imagePath = Application.StartupPath;
             imagePath = Directory.GetParent(imagePath).FullName;
             imagePath = Directory.GetParent(imagePath).FullName;
@@ -23,6 +25,7 @@ namespace oopprojectfinal
             pb.Image = Image.FromFile(imagePath);
             pb.SizeMode = PictureBoxSizeMode.StretchImage;//makes the pic in the size of the image
             pb.Size = new Size(50, 50);//size of the frame 
+
         }
 
 

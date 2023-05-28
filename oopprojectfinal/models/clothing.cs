@@ -20,7 +20,6 @@ namespace oopprojectfinal
 
         [field: NonSerialized]
         public PictureBox pb { get; set; }
-
         //public abstract void createPic();
 
         public abstract void loadPic();
