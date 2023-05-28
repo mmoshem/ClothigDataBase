@@ -479,7 +479,7 @@ namespace oopprojectfinal
 
         void fill_info()
         {
-            if (selectedRow != null)
+            if (selectedRow != null && selectedRow.Index!=-1)
             {
                 if (userPants != null)
                 {
@@ -581,8 +581,7 @@ namespace oopprojectfinal
 
                 comboBoxItem.SelectedIndex = loaded.selectedComboBoxItem;
 
-
-                /*
+                
                 switch (loaded.selectedComboBoxItem)
                 {
                     case 0: //shoes
@@ -596,7 +595,9 @@ namespace oopprojectfinal
                         comboBoxItem.SelectedIndex = 1;
                         dataGrid.DataSource = ShirtTable;
                         fill_info();
-
+                        dataGrid.ClearSelection();
+                        selectedRow = dataGrid.Rows[loaded.selectedRow];
+                        selectedRow.Selected = true;
                         break;
                     case 2: //pants
                         comboBoxItem.Refresh();
@@ -606,7 +607,7 @@ namespace oopprojectfinal
 
                         break;
                 }
-                */
+                
 
 
                 stream.Close();
