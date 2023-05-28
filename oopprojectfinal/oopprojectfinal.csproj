@@ -60,6 +60,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="models\shirt.cs" />
     <Compile Include="models\Shoe.cs" />
+    <Compile Include="saver.cs" />
     <Compile Include="userControls\UserControlPants.cs">
       <SubType>UserControl</SubType>
     </Compile>

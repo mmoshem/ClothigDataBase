@@ -38,6 +38,8 @@
             this.buttonClear = new System.Windows.Forms.Button();
             this.showPic = new System.Windows.Forms.Button();
             this.pictureHolder = new System.Windows.Forms.PictureBox();
+            this.saveButton = new System.Windows.Forms.Button();
+            this.loadButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureHolder)).BeginInit();
             this.SuspendLayout();
@@ -61,7 +63,7 @@
             "Shirt",
             "Pants"});
             this.comboBoxItem.Location = new System.Drawing.Point(236, 81);
-            this.comboBoxItem.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.comboBoxItem.Margin = new System.Windows.Forms.Padding(6);
             this.comboBoxItem.Name = "comboBoxItem";
             this.comboBoxItem.Size = new System.Drawing.Size(238, 33);
             this.comboBoxItem.TabIndex = 2;
@@ -70,7 +72,7 @@
             // panelForm
             // 
             this.panelForm.Location = new System.Drawing.Point(56, 192);
-            this.panelForm.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panelForm.Margin = new System.Windows.Forms.Padding(6);
             this.panelForm.Name = "panelForm";
             this.panelForm.Size = new System.Drawing.Size(548, 727);
             this.panelForm.TabIndex = 12;
@@ -78,7 +80,7 @@
             // buttonAdd
             // 
             this.buttonAdd.Location = new System.Drawing.Point(516, 56);
-            this.buttonAdd.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.buttonAdd.Margin = new System.Windows.Forms.Padding(6);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(150, 84);
             this.buttonAdd.TabIndex = 14;
@@ -89,7 +91,7 @@
             // update_button
             // 
             this.update_button.Location = new System.Drawing.Point(742, 56);
-            this.update_button.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.update_button.Margin = new System.Windows.Forms.Padding(6);
             this.update_button.Name = "update_button";
             this.update_button.Size = new System.Drawing.Size(258, 84);
             this.update_button.TabIndex = 16;
@@ -101,7 +103,7 @@
             // 
             this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid.Location = new System.Drawing.Point(694, 198);
-            this.dataGrid.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dataGrid.Margin = new System.Windows.Forms.Padding(6);
             this.dataGrid.Name = "dataGrid";
             this.dataGrid.RowHeadersWidth = 82;
             this.dataGrid.Size = new System.Drawing.Size(1630, 722);
@@ -111,7 +113,7 @@
             // buttonClear
             // 
             this.buttonClear.Location = new System.Drawing.Point(1056, 56);
-            this.buttonClear.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.buttonClear.Margin = new System.Windows.Forms.Padding(6);
             this.buttonClear.Name = "buttonClear";
             this.buttonClear.Size = new System.Drawing.Size(230, 84);
             this.buttonClear.TabIndex = 17;
@@ -122,7 +124,7 @@
             // showPic
             // 
             this.showPic.Location = new System.Drawing.Point(1352, 56);
-            this.showPic.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.showPic.Margin = new System.Windows.Forms.Padding(6);
             this.showPic.Name = "showPic";
             this.showPic.Size = new System.Drawing.Size(150, 84);
             this.showPic.TabIndex = 18;
@@ -141,11 +143,34 @@
             this.pictureHolder.TabIndex = 19;
             this.pictureHolder.TabStop = false;
             // 
+            // saveButton
+            // 
+            this.saveButton.Location = new System.Drawing.Point(1562, 56);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(6);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(150, 84);
+            this.saveButton.TabIndex = 20;
+            this.saveButton.Text = "Save";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            // 
+            // loadButton
+            // 
+            this.loadButton.Location = new System.Drawing.Point(1757, 56);
+            this.loadButton.Margin = new System.Windows.Forms.Padding(6);
+            this.loadButton.Name = "loadButton";
+            this.loadButton.Size = new System.Drawing.Size(164, 84);
+            this.loadButton.TabIndex = 21;
+            this.loadButton.Text = "Load";
+            this.loadButton.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2374, 1602);
+            this.ClientSize = new System.Drawing.Size(2050, 1493);
+            this.Controls.Add(this.loadButton);
+            this.Controls.Add(this.saveButton);
             this.Controls.Add(this.pictureHolder);
             this.Controls.Add(this.showPic);
             this.Controls.Add(this.buttonClear);
@@ -155,7 +180,7 @@
             this.Controls.Add(this.label_select_Item);
             this.Controls.Add(this.panelForm);
             this.Controls.Add(this.dataGrid);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Form1";
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -177,6 +202,8 @@
         private System.Windows.Forms.Button buttonClear;
         private System.Windows.Forms.Button showPic;
         private System.Windows.Forms.PictureBox pictureHolder;
+        private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.Button loadButton;
     }
 }
 

@@ -18,6 +18,7 @@ namespace oopprojectfinal
         public double price { get; set; }
         public string item { get; set; }
 
+        [field: NonSerialized]
         public PictureBox pb { get; set; }
 
         //public abstract void createPic();
