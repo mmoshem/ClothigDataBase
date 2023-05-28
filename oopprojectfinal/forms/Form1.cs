@@ -561,8 +561,8 @@ namespace oopprojectfinal
 
 
                 comboBoxItem.SelectedIndex = loaded.selectedComboBoxItem;
+               
 
-                
                 switch (loaded.selectedComboBoxItem)
                 {
                     case 0: //shoes
@@ -570,6 +570,9 @@ namespace oopprojectfinal
                         comboBoxItem.SelectedIndex = 0;
                         dataGrid.DataSource = ShoeTable;
                         fill_info();
+                        dataGrid.ClearSelection();
+                        selectedRow = dataGrid.Rows[loaded.selectedRow];
+                        selectedRow.Selected = true;
                         break;
                     case 1: //shirt
                         comboBoxItem.Refresh();
@@ -585,7 +588,9 @@ namespace oopprojectfinal
                         comboBoxItem.SelectedIndex = 2;
                         dataGrid.DataSource = PantsTable;
                         fill_info();
-
+                        dataGrid.ClearSelection();
+                        selectedRow = dataGrid.Rows[loaded.selectedRow];
+                        selectedRow.Selected = true;
                         break;
                 }
                 
