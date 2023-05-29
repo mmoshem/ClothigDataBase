@@ -11,9 +11,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-/// <summary>
-/// /yr
-/// </summary>
+
 namespace oopprojectfinal
 {
 
