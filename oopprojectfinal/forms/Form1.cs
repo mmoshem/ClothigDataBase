@@ -523,7 +523,7 @@ namespace oopprojectfinal
             IFormatter formatter = new BinaryFormatter();
             using (Stream stream = new FileStream("store.oop", FileMode.Create, FileAccess.Write, FileShare.None))
             {
-                saver saved = new saver(PantsTable,ShirtTable,ShoeTable,selectedComboItem,selectedRowIndex);
+                saver saved = new saver(selectedRowIndex, PantsTable,ShirtTable,ShoeTable,selectedComboItem,selectedRowIndex);
                 formatter.Serialize(stream, saved);
             }
 
@@ -548,7 +548,7 @@ namespace oopprojectfinal
                 ShirtTable = loaded.toBindingListShirts();
                 ShoeTable = loaded.toBindingListShoes();
                 ClothingTable = loaded.toBindingListClothing();
-
+                int x = loaded.getTheIndex();
                 foreach (Clothing c in ClothingTable)
                 {
                     c.pb.MouseDown += pic_MouseDown;
@@ -571,7 +571,7 @@ namespace oopprojectfinal
                             dataGrid.ClearSelection();
                             if (ClothingTable.Count > -1)
                             {
-                                selectedRow = dataGrid.Rows[0];
+                                selectedRow = dataGrid.Rows[x];
                             }
                             else { selectedRow = dataGrid.Rows[loaded.selectedRow]; }
                             selectedRow.Selected = true;
@@ -584,7 +584,7 @@ namespace oopprojectfinal
                             dataGrid.ClearSelection();
                             if (ClothingTable.Count > -1)
                             {
-                                selectedRow = dataGrid.Rows[0];
+                                selectedRow = dataGrid.Rows[x];
                             }
                             else { selectedRow = dataGrid.Rows[loaded.selectedRow]; }
 
@@ -598,7 +598,7 @@ namespace oopprojectfinal
                             dataGrid.ClearSelection();
                             if (ClothingTable.Count > -1)
                             {
-                                selectedRow = dataGrid.Rows[0];
+                                selectedRow = dataGrid.Rows[x];
                             }
                             else { selectedRow = dataGrid.Rows[loaded.selectedRow]; }
 

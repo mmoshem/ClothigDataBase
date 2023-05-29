@@ -22,14 +22,14 @@ namespace oopprojectfinal
         public int selectedComboBoxItem;
         public int selectedRow;
 
-
-        public saver(BindingList<Pants> pantsList, BindingList<Shirt> shirtsList, BindingList<Shoe> shoesList, int selCombo,int selRow)
+        int _indexToLoad { get; set; }
+        public saver(int indexToLoad,BindingList<Pants> pantsList, BindingList<Shirt> shirtsList, BindingList<Shoe> shoesList, int selCombo,int selRow)
         {
             pantsArr = new Pants[pantsList.Count];
             shirtsArr = new Shirt[shirtsList.Count];
             shoesArr = new Shoe[shoesList.Count];
             clothingArr = new Clothing[pantsList.Count + shirtsList.Count + shoesList.Count];
-           
+            
             points = new Point[clothingArr.Length];
             
             int j = 0;
@@ -59,9 +59,13 @@ namespace oopprojectfinal
             {
                 points[i] = clothingArr[i].pb.Location;
             }
-
+            _indexToLoad = indexToLoad;
             selectedComboBoxItem = selCombo;
             selectedRow = selRow;
+        }
+        public int getTheIndex()
+        {
+            return _indexToLoad;
         }
 
         public BindingList<Pants> toBindingListPants()
@@ -83,6 +87,7 @@ namespace oopprojectfinal
             {
                 bl.Add(s);
             }
+            
             return bl;
         }
 
