@@ -153,9 +153,6 @@ namespace oopprojectfinal
         }
 
 
-
-
-
         private void update_button_Click(object sender, EventArgs e)
         {
             if (selectedRow != null && selectedRow.Index != -1)
@@ -263,7 +260,7 @@ namespace oopprojectfinal
                 userShirt.clear();
         }
 
-        //blah
+    
         private void showPic_Click(object sender, EventArgs e)
         {
             if (userPants != null)
@@ -562,7 +559,7 @@ namespace oopprojectfinal
 
 
 
-                if (ClothingTable.Count != 0)
+                if (ClothingTable.Count != 0&&selectedRow!=null)
                 {
                     switch (loaded.selectedComboBoxItem)
                     {
