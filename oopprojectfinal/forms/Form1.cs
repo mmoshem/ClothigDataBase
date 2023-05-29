@@ -370,8 +370,8 @@ namespace oopprojectfinal
                     {
                         if (c.item == "Pants")
                         {
-                            dataGrid.ClearSelection();
                             comboBoxItem.SelectedIndex = 2;
+                            dataGrid.ClearSelection();
                             if (dataGrid.RowCount != 0)
                             {
                                 selectedRow = dataGrid.Rows[PantsTable.IndexOf((Pants)c)];
@@ -381,8 +381,8 @@ namespace oopprojectfinal
                         }
                         else if (c.item == "Shirt")
                         {
-                            dataGrid.ClearSelection();
                             comboBoxItem.SelectedIndex = 1;
+                            dataGrid.ClearSelection();
 
                             if (dataGrid.RowCount != 0)
                             {
@@ -393,8 +393,8 @@ namespace oopprojectfinal
                         }
                         else if (c.item == "Shoe")
                         {
-                            dataGrid.ClearSelection();
                             comboBoxItem.SelectedIndex = 0;
+                            dataGrid.ClearSelection();
 
                             if (dataGrid.RowCount != 0)
                             {
@@ -560,40 +560,77 @@ namespace oopprojectfinal
                 }
 
 
-                comboBoxItem.SelectedIndex = loaded.selectedComboBoxItem;
-               
 
-                switch (loaded.selectedComboBoxItem)
+                if (ClothingTable.Count != 0)
                 {
-                    case 0: //shoes
-                        comboBoxItem.Refresh();
-                        comboBoxItem.SelectedIndex = 0;
-                        dataGrid.DataSource = ShoeTable;
-                        fill_info();
-                        dataGrid.ClearSelection();
-                        selectedRow = dataGrid.Rows[loaded.selectedRow];
-                        selectedRow.Selected = true;
-                        break;
-                    case 1: //shirt
-                        comboBoxItem.Refresh();
-                        comboBoxItem.SelectedIndex = 1;
-                        dataGrid.DataSource = ShirtTable;
-                        fill_info();
-                        dataGrid.ClearSelection();
-                        selectedRow = dataGrid.Rows[loaded.selectedRow];
-                        selectedRow.Selected = true;
-                        break;
-                    case 2: //pants
-                        comboBoxItem.Refresh();
-                        comboBoxItem.SelectedIndex = 2;
-                        dataGrid.DataSource = PantsTable;
-                        fill_info();
-                        dataGrid.ClearSelection();
-                        selectedRow = dataGrid.Rows[loaded.selectedRow];
-                        selectedRow.Selected = true;
-                        break;
+                    switch (loaded.selectedComboBoxItem)
+                    {
+                        case 0: //shoes
+                            comboBoxItem.Refresh();
+                            comboBoxItem.SelectedIndex = 0;
+                            dataGrid.DataSource = ShoeTable;
+                            fill_info();
+                            dataGrid.ClearSelection();
+                            if (ClothingTable.Count > -1)
+                            {
+                                selectedRow = dataGrid.Rows[0];
+                            }
+                            else { selectedRow = dataGrid.Rows[loaded.selectedRow]; }
+                            selectedRow.Selected = true;
+                            break;
+                        case 1: //shirt
+                            comboBoxItem.Refresh();
+                            comboBoxItem.SelectedIndex = 1;
+                            dataGrid.DataSource = ShirtTable;
+                            fill_info();
+                            dataGrid.ClearSelection();
+                            if (ClothingTable.Count > -1)
+                            {
+                                selectedRow = dataGrid.Rows[0];
+                            }
+                            else { selectedRow = dataGrid.Rows[loaded.selectedRow]; }
+
+                            selectedRow.Selected = true;
+                            break;
+                        case 2: //pants
+                            comboBoxItem.Refresh();
+                            comboBoxItem.SelectedIndex = 2;
+                            dataGrid.DataSource = PantsTable;
+                            fill_info();
+                            dataGrid.ClearSelection();
+                            if (ClothingTable.Count > -1)
+                            {
+                                selectedRow = dataGrid.Rows[0];
+                            }
+                            else { selectedRow = dataGrid.Rows[loaded.selectedRow]; }
+
+                            selectedRow.Selected = true;
+                            break;
+                    }
                 }
-                
+                else
+                {
+                    switch (loaded.selectedComboBoxItem)
+                    {
+                        case 0: //shoes
+                            comboBoxItem.Refresh();
+                            comboBoxItem.SelectedIndex = 0;
+                            dataGrid.DataSource = ShoeTable;
+                            
+
+                            break;
+                        case 1:
+                            comboBoxItem.Refresh();
+                            comboBoxItem.SelectedIndex = 1;
+                            dataGrid.DataSource = ShirtTable;
+                            break;
+                        case 3:
+                            comboBoxItem.Refresh();
+                            comboBoxItem.SelectedIndex = 2;
+                            dataGrid.DataSource = ShirtTable;
+                            break;
+                    }
+                }
 
 
                 stream.Close();
