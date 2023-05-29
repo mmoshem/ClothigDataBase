@@ -106,7 +106,7 @@
             this.dataGrid.Margin = new System.Windows.Forms.Padding(6);
             this.dataGrid.Name = "dataGrid";
             this.dataGrid.RowHeadersWidth = 82;
-            this.dataGrid.Size = new System.Drawing.Size(1630, 722);
+            this.dataGrid.Size = new System.Drawing.Size(1766, 722);
             this.dataGrid.TabIndex = 0;
             this.dataGrid.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGrid_RowHeaderMouseClick);
             // 
@@ -138,7 +138,7 @@
             this.pictureHolder.Location = new System.Drawing.Point(56, 1011);
             this.pictureHolder.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureHolder.Name = "pictureHolder";
-            this.pictureHolder.Size = new System.Drawing.Size(2056, 572);
+            this.pictureHolder.Size = new System.Drawing.Size(2404, 572);
             this.pictureHolder.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureHolder.TabIndex = 19;
             this.pictureHolder.TabStop = false;
@@ -169,7 +169,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2050, 1493);
+            this.ClientSize = new System.Drawing.Size(2500, 1493);
             this.Controls.Add(this.loadButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.pictureHolder);
@@ -183,7 +183,7 @@
             this.Controls.Add(this.dataGrid);
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Form1";
-            this.Text = "s";
+            this.Text = "Clohing Data Base";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureHolder)).EndInit();
