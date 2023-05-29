@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="oopprojectfinal.Form1">
+    <Position X="13.25" Y="3.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AgEAAgBAACBBgAAALAnIAgAjAAAYGBAAQAAQQABEAAQ=</HashCode>
+      <FileName>forms\Form1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="oopprojectfinal.Clothes">
+    <Position X="4" Y="3.75" Width="1.5" />
+    <InheritanceLine Type="oopprojectfinal.Clothing" ManuallyRouted="true">
+      <Path>
+        <Point X="8.5" Y="3.401" />
+        <Point X="8.5" Y="3.687" />
+        <Point X="4.75" Y="3.687" />
+        <Point X="4.75" Y="3.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>models\clothes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="oopprojectfinal.Clothing">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEBAAAAAQAAAAABAAQIgAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>models\clothing.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="oopprojectfinal.Pants">
+    <Position X="2.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>models\pants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="oopprojectfinal.Shirt">
+    <Position X="5.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>models\shirt.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="oopprojectfinal.Shoe">
+    <Position X="11.5" Y="3.75" Width="1.5" />
+    <InheritanceLine Type="oopprojectfinal.Clothing" ManuallyRouted="true">
+      <Path>
+        <Point X="8.5" Y="3.401" />
+        <Point X="8.5" Y="3.687" />
+        <Point X="12.25" Y="3.687" />
+        <Point X="12.25" Y="3.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAEAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>models\Shoe.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="oopprojectfinal.saver">
+    <Position X="9.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CMAAIgCQAAAQBAAAAACAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>saver.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="oopprojectfinal.userControls.UserControlPants">
+    <Position X="7.5" Y="8.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AEAAAAEAACAAABIAAAOgQBCCAAgAgCQAAAACAAIACAg=</HashCode>
+      <FileName>userControls\UserControlPants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="oopprojectfinal.userControls.UserControlShirt">
+    <Position X="5.75" Y="8.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AEAAAAEAACABABAAAAOgQACCAAgAgKQAAIACAAIAAAA=</HashCode>
+      <FileName>userControls\UserControlShirt.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="oopprojectfinal.UserControlShoe">
+    <Position X="3.75" Y="8.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AEAgAAUAACAQABAAAAOgQACCAAgAACAAAAACAAIAgAA=</HashCode>
+      <FileName>userControls\UserControlShoe.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

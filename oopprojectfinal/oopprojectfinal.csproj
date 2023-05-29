@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>oopprojectfinal</RootNamespace>
     <AssemblyName>oopprojectfinal</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -101,6 +101,7 @@
     <EmbeddedResource Include="userControls\UserControlShoe.resx">
       <DependentUpon>UserControlShoe.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
