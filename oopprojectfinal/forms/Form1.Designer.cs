@@ -79,6 +79,7 @@
             // 
             // buttonAdd
             // 
+            this.buttonAdd.ForeColor = System.Drawing.Color.Coral;
             this.buttonAdd.Location = new System.Drawing.Point(717, 63);
             this.buttonAdd.Margin = new System.Windows.Forms.Padding(6);
             this.buttonAdd.Name = "buttonAdd";
@@ -90,7 +91,8 @@
             // 
             // update_button
             // 
-            this.update_button.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.update_button.BackColor = System.Drawing.Color.White;
+            this.update_button.ForeColor = System.Drawing.Color.YellowGreen;
             this.update_button.Location = new System.Drawing.Point(1010, 63);
             this.update_button.Margin = new System.Windows.Forms.Padding(6);
             this.update_button.Name = "update_button";
@@ -125,6 +127,7 @@
             // 
             // showPic
             // 
+            this.showPic.ForeColor = System.Drawing.Color.BlueViolet;
             this.showPic.Location = new System.Drawing.Point(1309, 63);
             this.showPic.Margin = new System.Windows.Forms.Padding(6);
             this.showPic.Name = "showPic";
