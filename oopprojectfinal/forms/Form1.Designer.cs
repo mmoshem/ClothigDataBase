@@ -63,7 +63,7 @@
             "Shirt",
             "Pants"});
             this.comboBoxItem.Location = new System.Drawing.Point(236, 81);
-            this.comboBoxItem.Margin = new System.Windows.Forms.Padding(6);
+            this.comboBoxItem.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.comboBoxItem.Name = "comboBoxItem";
             this.comboBoxItem.Size = new System.Drawing.Size(238, 33);
             this.comboBoxItem.TabIndex = 2;
@@ -72,17 +72,17 @@
             // panelForm
             // 
             this.panelForm.Location = new System.Drawing.Point(56, 192);
-            this.panelForm.Margin = new System.Windows.Forms.Padding(6);
+            this.panelForm.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.panelForm.Name = "panelForm";
             this.panelForm.Size = new System.Drawing.Size(548, 727);
             this.panelForm.TabIndex = 12;
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(516, 56);
-            this.buttonAdd.Margin = new System.Windows.Forms.Padding(6);
+            this.buttonAdd.Location = new System.Drawing.Point(570, 71);
+            this.buttonAdd.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(150, 84);
+            this.buttonAdd.Size = new System.Drawing.Size(131, 67);
             this.buttonAdd.TabIndex = 14;
             this.buttonAdd.Text = "Add";
             this.buttonAdd.UseVisualStyleBackColor = true;
@@ -90,10 +90,10 @@
             // 
             // update_button
             // 
-            this.update_button.Location = new System.Drawing.Point(742, 56);
-            this.update_button.Margin = new System.Windows.Forms.Padding(6);
+            this.update_button.Location = new System.Drawing.Point(782, 71);
+            this.update_button.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.update_button.Name = "update_button";
-            this.update_button.Size = new System.Drawing.Size(258, 84);
+            this.update_button.Size = new System.Drawing.Size(131, 67);
             this.update_button.TabIndex = 16;
             this.update_button.Text = "update";
             this.update_button.UseVisualStyleBackColor = true;
@@ -103,7 +103,7 @@
             // 
             this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid.Location = new System.Drawing.Point(694, 198);
-            this.dataGrid.Margin = new System.Windows.Forms.Padding(6);
+            this.dataGrid.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.dataGrid.Name = "dataGrid";
             this.dataGrid.RowHeadersWidth = 82;
             this.dataGrid.Size = new System.Drawing.Size(1766, 722);
@@ -112,10 +112,11 @@
             // 
             // buttonClear
             // 
-            this.buttonClear.Location = new System.Drawing.Point(1056, 56);
-            this.buttonClear.Margin = new System.Windows.Forms.Padding(6);
+            this.buttonClear.ForeColor = System.Drawing.Color.DarkRed;
+            this.buttonClear.Location = new System.Drawing.Point(971, 71);
+            this.buttonClear.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.buttonClear.Name = "buttonClear";
-            this.buttonClear.Size = new System.Drawing.Size(230, 84);
+            this.buttonClear.Size = new System.Drawing.Size(131, 67);
             this.buttonClear.TabIndex = 17;
             this.buttonClear.Text = "Clear";
             this.buttonClear.UseVisualStyleBackColor = true;
@@ -123,10 +124,10 @@
             // 
             // showPic
             // 
-            this.showPic.Location = new System.Drawing.Point(1352, 56);
-            this.showPic.Margin = new System.Windows.Forms.Padding(6);
+            this.showPic.Location = new System.Drawing.Point(1152, 71);
+            this.showPic.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.showPic.Name = "showPic";
-            this.showPic.Size = new System.Drawing.Size(150, 84);
+            this.showPic.Size = new System.Drawing.Size(131, 67);
             this.showPic.TabIndex = 18;
             this.showPic.Text = "Show Pic";
             this.showPic.UseVisualStyleBackColor = true;
@@ -145,19 +146,20 @@
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(1562, 56);
-            this.saveButton.Margin = new System.Windows.Forms.Padding(6);
+            this.saveButton.BackColor = System.Drawing.Color.SteelBlue;
+            this.saveButton.Location = new System.Drawing.Point(1335, 29);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(150, 84);
+            this.saveButton.Size = new System.Drawing.Size(131, 67);
             this.saveButton.TabIndex = 20;
             this.saveButton.Text = "Save";
-            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.UseVisualStyleBackColor = false;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // loadButton
             // 
-            this.loadButton.Location = new System.Drawing.Point(1752, 65);
-            this.loadButton.Margin = new System.Windows.Forms.Padding(6);
+            this.loadButton.Location = new System.Drawing.Point(1335, 108);
+            this.loadButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.loadButton.Name = "loadButton";
             this.loadButton.Size = new System.Drawing.Size(131, 67);
             this.loadButton.TabIndex = 21;
@@ -169,7 +171,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2500, 1493);
+            this.ClientSize = new System.Drawing.Size(2349, 1493);
             this.Controls.Add(this.loadButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.pictureHolder);
@@ -181,7 +183,7 @@
             this.Controls.Add(this.label_select_Item);
             this.Controls.Add(this.panelForm);
             this.Controls.Add(this.dataGrid);
-            this.Margin = new System.Windows.Forms.Padding(6);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "Form1";
             this.Text = "Clohing Data Base";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

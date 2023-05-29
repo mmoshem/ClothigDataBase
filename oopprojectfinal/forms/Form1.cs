@@ -179,7 +179,7 @@ namespace oopprojectfinal
 
                         ClothingTable.Remove((Clothing)PantsTable[selectedRow.Index]);
                         ClothingTable.Add((Clothing)tmp);
-
+                        //ClothingTable[selectedRow.Index] = (Clothing)tmp;
 
                         PantsTable[selectedRow.Index] = tmp;
                     }
